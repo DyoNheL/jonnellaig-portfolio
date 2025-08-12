@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>Jonnel Laig</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fas fa-robot"></i>
+                <span>&nbsp;DyoNheL</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#intro" class="nav-link">Home</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Sample Automation</a></li>
+                <li><a href="#footer" class="nav-link">Contact Me</a></li>
+            </ul>
+
+
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
+
+    <!-- ===== INTRODUCTION ===== -->
+    <section id="intro" class="intro" data-aos="fade-up">
+        <h1>Hi, I'm <span>Jonnel Laig</span></h1>
+        <p>QA Automation Tester | Ensuring Quality Through Automation</p>
+        <div class="btn-group" data-aos="zoom-in" data-aos-delay="200">
+            <a href="#footer" class="btn primary">Hire Me</a>
+            <a href="files/jonnellaig_cv.pdf" class="btn secondary" download>Download CV</a>
+        </div>
+    </section>
+
+    <!-- ===== SUMMARY ===== -->
+    <section id="summary" class="summary" data-aos="fade-up">
+        <h2>Career Summary</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, sed blanditiis cupiditate placeat
+            sapiente fugiat amet illum, repellendus quo doloribus libero recusandae quod corrupti nihil natus velit
+            id incidunt facere!
+        </p>
+    </section>
+
+    <!-- ===== EXPERIENCE TIMELINE ===== -->
+    <section id="experience" class="experience" data-aos="fade-up">
+        <div class="experience-container">
+            <!-- LEFT: Years of Experience -->
+            <div class="exp-card">
+                <h2>Years of Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item" onclick="openModal('modalSecondJob')">
+                        <div class="year">2022 - Present</div>
+                        <div class="details">Application Systems Engineer - WeServ Systems International, Inc.</div>
+                    </div>
+                    <div class="timeline-item" onclick="openModal('modalFirstJob')">
+                        <div class="year">2021 - 2022</div>
+                        <div class="details">Application Systems Engineer/Trainee - WeServ Systems International, Inc.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Project Experience -->
+            <div class="project-card-exp">
+                <h2>Project Experience</h2>
+                <div class="project-list">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MODALS ===== -->
+    <div id="modalSecondJob" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalSecondJob')">&times;</span>
+            <h2>Application Systems Engineer - WeServ Systems International, Inc.</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, sed blanditiis cupiditate placeat
+                sapiente fugiat amet illum, repellendus quo doloribus libero recusandae quod corrupti nihil natus velit
+                id incidunt facere!
+            </p>
+        </div>
+    </div>
+
+    <div id="modalFirstJob" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modalFirstJob')">&times;</span>
+            <h2>Application Systems Engineer/Trainee - WeServ Systems International, Inc.</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, sed blanditiis cupiditate placeat
+                sapiente fugiat amet illum, repellendus quo doloribus libero recusandae quod corrupti nihil natus velit
+                id incidunt facere!
+            </p>
+        </div>
+    </div>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="skills" id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-slider">
+            <div class="skills-track">
+                <div class="skill-card">
+                    <img src="img/skills/selenium.png" alt="Selenium" />
+                    <span>Selenium</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/robotframework.png" alt="Robot Framework" />
+                    <span>Robot Framework</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/java.png" alt="Java" />
+                    <span>Java</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/appium.png" alt="Appium" />
+                    <span>Appium</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/JUnit.png" alt="JUnit" />
+                    <span>JUnit</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/postman.png" alt="Postman" />
+                    <span>Postman</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/jira.png" alt="Jira" />
+                    <span>Jira</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/jenkins.png" alt="Jenkins" />
+                    <span>Jenkins</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/git.png" alt="GIT" />
+                    <span>GIT</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/sql.png" alt="SQL" />
+                    <span>SQL</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/selenium.png" alt="Selenium" />
+                    <span>Selenium</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/robotframework.png" alt="Robot Framework" />
+                    <span>Robot Framework</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SAMPLE PROJECT ===== -->
+    <section class="projects" id="projects">
+        <h2>Sample Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="img/projects/saucedemo.png" alt="Web Application Testing Using Selenium" />
+                <h3>Web Application Testing Using Selenium</h3>
+                <p>
+                    Automated functional testing for a sauce demo web application using Selenium.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer">
+        <h2>Contact Me</h2>
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/jonnellaig/" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/DyoNheL/" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://ph.jobstreet.com/profile/jonnel-laig-kqstj6n2ML" target="_blank" aria-label="jobstreet">
+                <i class="fas fa-briefcase"></i>
+            </a>
+        </div>
+
+        <p>&copy; <script>document.write(new Date().getFullYear());</script> Jonnel Laig. All Rights Reserved.</p>
+    </footer>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800, // how fast the slide happens
+            easing: "ease-out", // smooth deceleration
+            once: false,
+        });
+    </script>
+
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Initialize Particles -->
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 800 } },
+                color: { value: "#00d4ff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#00d4ff",
+                    opacity: 0.4,
+                    width: 1,
+                },
+                move: { enable: true, speed: 2 },
+            },
+            interactivity: {
+                events: {
+                    onhover: { enable: true, mode: "grab" },
+                    onclick: { enable: true, mode: "push" },
+                },
+                modes: { grab: { distance: 200, line_linked: { opacity: 0.6 } } },
+            },
+            retina_detect: true,
+        });
+    </script>
+</body>
+
+</html>

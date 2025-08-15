@@ -596,6 +596,8 @@ footer {
   max-width: 1100px;
   margin: 0 auto;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 /* track that moves */
@@ -625,6 +627,32 @@ footer {
   align-items: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: grab;
+}
+
+/* WIP cover */
+.project-card[data-status="wip"]::before {
+  content: "WORK IN PROGRESS";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.65);
+  color: var(--primary-color, #00bcd4);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+  padding: 15px;
+  letter-spacing: 1px;
+  border-radius: 15px;
+  backdrop-filter: blur(2px);
+}
+
+/* Subtle card desaturation */
+.project-card[data-status="wip"] img {
+  filter: grayscale(40%) brightness(0.9);
 }
 
 /* when dragging */
@@ -664,8 +692,8 @@ footer {
 .card-buttons {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 110%); /* start hidden below */
-  bottom: 18px; /* final resting distance from bottom */
+  transform: translate(-50%, 110%);
+  bottom: 18px;
   display: flex;
   gap: 12px;
   transition: transform 0.32s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.32s;
@@ -765,7 +793,11 @@ footer {
 @media (max-width: 900px) {
   .project-card {
     flex: 0 0 280px;
-    min-height: 320px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
   }
 }
 
@@ -773,13 +805,17 @@ footer {
   .projects {
     padding: 40px 16px;
   }
-  .project-card {
-    flex: 0 0 86%;
-    min-height: 300px;
-    padding-bottom: 86px;
-  }
   .projects-track {
     gap: 18px;
+  }
+  .project-card {
+    flex: 0 0 86%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding-bottom: 86px;
   }
   .carousel-viewport {
     padding-bottom: 8px;
@@ -787,6 +823,49 @@ footer {
 }
 
 /* End Sample Projects Section */
+
+/* Star Tab Section */
+
+/* Tabs Styling */
+.project-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.project-tabs .tab-btn {
+  background: transparent;
+  border: 2px solid #00d4ff;
+  color: #00d4ff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-tabs .tab-btn:hover {
+  background: #00d4ff;
+  color: #000;
+}
+
+.project-tabs .tab-btn.active {
+  background: #00d4ff;
+  color: #000;
+}
+
+/* Hide all tab content except active */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* End Tab Section */
 
 #particles-js {
   position: fixed;

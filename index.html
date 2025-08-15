@@ -194,28 +194,94 @@
 
     <!-- ===== SAMPLE PROJECT ===== -->
     <section class="projects" id="projects">
-        <h2>Sample Projects</h2>
+        <h2 data-aos="fade-up">Sample Projects</h2>
 
-        <div class="carousel-viewport">
+        <!-- Tabs Navigation -->
+        <div class="project-tabs" data-aos="fade-up">
+            <button class="tab-btn active" data-tab="automation">Automation Samples</button>
+            <button class="tab-btn" data-tab="documentation">Documentation Samples</button>
+            <button class="tab-btn" data-tab="cicd">CI/CD Integration</button>
+        </div>
+
+        <!-- Automation Projects -->
+        <div class="carousel-viewport tab-content active" data-tab-content="automation" data-aos="fade-up">
             <div class="projects-track">
                 <div class="project-card">
-                    <img src="img/projects/saucedemo.png" alt="Web Application" draggable="false">
+                    <img src="img/projects/automation/saucedemo.png" alt="Web Application" draggable="false">
                     <h3>Web Application Automation</h3>
                     <p>Automated functional testing for a sauce demo web application using Selenium.</p>
-
                     <div class="card-overlay">
                         <a href="#" class="btn primary"><i class="fab fa-github"></i> View Repo</a>
                         <a href="#" class="btn secondary"><i class="fas fa-external-link-alt"></i> View Demo</a>
                     </div>
                 </div>
 
-
-
+                <div class="project-card" data-status="wip">
+                    <img src="img/projects/automation/api-testing.png" alt="API Testing" draggable="false">
+                    <h3>API Testing</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius a possimus quibusdam ab obcaecati
+                        nam aspernatur, doloribus nobis rerum commodi error, in neque eos amet tempora porro hic.
+                        Consectetur, quasi.</p>
+                    <div class="card-overlay">
+                        <a href="#" class="btn primary"><i class="fab fa-github"></i> View Repo</a>
+                        <a href="#" class="btn secondary"><i class="fas fa-external-link-alt"></i> View Demo</a>
+                    </div>
+                </div>
             </div>
+            <div class="carousel-dots"></div>
         </div>
 
-        <div class="carousel-dots" aria-hidden="false"></div>
+        <!-- Documentation Samples -->
+        <div class="carousel-viewport tab-content" data-tab-content="documentation" data-aos="fade-up">
+            <div class="projects-track">
+                <div class="project-card">
+                    <img src="img/projects/documentation/test-documentation.png" alt="Test Documentation"
+                        draggable="false">
+                    <h3>Test Documentation</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis labore, eligendi repudiandae
+                        nesciunt illo consequuntur sunt sit quaerat adipisci et esse quod ratione facere ex obcaecati,
+                        repellat deserunt voluptatibus excepturi.</p>
+                    <div class="card-overlay">
+                        <a href="#" class="btn primary"><i class="fab fa-github"></i> View Repo</a>
+                        <a href="#" class="btn secondary"><i class="fas fa-external-link-alt"></i> View Demo</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="img/projects/documentation/bug-tracking.png" alt="Bug Tracking" draggable="false">
+                    <h3>Bug Tracking</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis labore, eligendi repudiandae
+                        nesciunt illo consequuntur sunt sit quaerat adipisci et esse quod ratione facere ex obcaecati,
+                        repellat deserunt voluptatibus excepturi.</p>
+                    <div class="card-overlay">
+                        <a href="#" class="btn primary"><i class="fab fa-github"></i> View Repo</a>
+                        <a href="#" class="btn secondary"><i class="fas fa-external-link-alt"></i> View Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-dots"></div>
+        </div>
+
+        <!-- CI/CD Integration -->
+        <div class="carousel-viewport tab-content" data-tab-content="cicd" data-aos="fade-up">
+            <div class="projects-track">
+                <div class="project-card" data-status="wip">
+                    <img src="img/projects/cicd/cicd.png" alt="CI/CD" draggable="false">
+                    <h3>CI/CD Pipeline</h3>
+                    <p>Implemented CI/CD pipeline using Jenkins, Docker, and GitHub Actions.</p>
+                    <div class="card-overlay">
+                        <a href="#" class="btn primary"><i class="fab fa-github"></i> View Repo</a>
+                        <a href="#" class="btn secondary"><i class="fas fa-external-link-alt"></i> View Demo</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="carousel-dots"></div>
+        </div>
+
+
+
     </section>
+
 
     <!-- ===== FOOTER ===== -->
     <footer id="footer">

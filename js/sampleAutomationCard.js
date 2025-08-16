@@ -1,182 +1,206 @@
-(function () {
-  document.querySelectorAll(".tab-content").forEach((tab) => {
-    const viewport = tab.querySelector(".carousel-viewport") || tab;
-    const track = tab.querySelector(".projects-track");
-    const cards = Array.from(tab.querySelectorAll(".project-card"));
-    const dotsContainer = tab.querySelector(".carousel-dots");
+document.addEventListener("DOMContentLoaded", function () {
+  const carousels = document.querySelectorAll(".carousel-viewport");
+  const tabButtons = document.querySelectorAll(".tab-btn");
 
-    if (!viewport || cards.length === 0) return;
+  carousels.forEach(initCarousel);
 
-    let currentIndex = 0;
-    let slideWidth = 0;
-    let gap = 0;
-    let isDragging = false;
-    let startX = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-    let autoSlideTimer = null;
-    const AUTO_DELAY = 5000;
-    const SNAP_THRESHOLD = 0.2;
+  function initCarousel(carousel) {
+    const track = carousel.querySelector(".projects-track");
+    const cards = carousel.querySelectorAll(".project-card");
+    if (!track || cards.length === 0) return;
 
-    // clear old dots & build new for this tab
-    dotsContainer.innerHTML = "";
-    cards.forEach((_, i) => {
-      const btn = document.createElement("button");
-      if (i === 0) btn.classList.add("active");
-      btn.addEventListener("click", () => {
-        goToSlide(i);
-        resetAutoplay();
-      });
-      dotsContainer.appendChild(btn);
-    });
-    const dots = Array.from(dotsContainer.children);
-
-    function updateSizes() {
-      const rect = cards[0].getBoundingClientRect();
-      slideWidth = rect.width;
-      const computedGap =
-        getComputedStyle(track).gap ||
-        getComputedStyle(track).columnGap ||
-        "30px";
-      gap = parseFloat(computedGap) || 30;
+    let dotsContainer = carousel.querySelector(".carousel-dots");
+    if (!dotsContainer) {
+      dotsContainer = document.createElement("div");
+      dotsContainer.className = "carousel-dots";
+      carousel.appendChild(dotsContainer);
     }
 
-    window.addEventListener("resize", () => {
-      updateSizes();
-      setTranslate(-currentIndex * (slideWidth + gap));
-    });
+    let currentIndex = 0;
+    let autoSlideInterval = null;
+    let cardsPerPage = getCardsPerPage();
+    let totalPages = Math.max(1, Math.ceil(cards.length / cardsPerPage));
+    let dots = [];
 
-    function setTranslate(x) {
-      track.style.transform = `translateX(${x}px)`;
+    buildDots();
+    moveToSlide(0, false);
+    startAutoSlide();
+
+    function getCardsPerPage() {
+      return window.innerWidth <= 768 ? 1 : 3;
+    }
+    function getGap() {
+      const g = window.getComputedStyle(track).gap || "0";
+      const n = parseFloat(g);
+      return Number.isFinite(n) ? n : 0;
+    }
+    function getCardWidth() {
+      return cards[0]?.offsetWidth || 0;
+    }
+    function clamp(n, min, max) {
+      return Math.min(Math.max(n, min), max);
+    }
+
+    function buildDots() {
+      dotsContainer.innerHTML = "";
+      for (let i = 0; i < totalPages; i++) {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "dot" + (i === currentIndex ? " active" : "");
+        dot.addEventListener("click", () => moveToSlide(i));
+        dotsContainer.appendChild(dot);
+      }
+      dots = Array.from(dotsContainer.querySelectorAll(".dot"));
     }
 
     function updateDots() {
       dots.forEach((d, i) => d.classList.toggle("active", i === currentIndex));
     }
 
-    function goToSlide(index) {
-      currentIndex = (index + cards.length) % cards.length;
-      const x = -currentIndex * (slideWidth + gap);
-      track.style.transition = "transform 0.45s ease";
-      setTranslate(x);
-      prevTranslate = x;
-      updateDots();
-    }
+    function moveToSlide(index, animate = true) {
+      currentIndex = clamp(index, 0, totalPages - 1);
 
-    function startAutoplay() {
-      stopAutoplay();
-      autoSlideTimer = setInterval(() => {
-        goToSlide((currentIndex + 1) % cards.length);
-      }, AUTO_DELAY);
-    }
-    function stopAutoplay() {
-      if (autoSlideTimer) {
-        clearInterval(autoSlideTimer);
-        autoSlideTimer = null;
+      const cardWidth = getCardWidth();
+      const gap = getGap();
+
+      if (!animate) track.style.transition = "none";
+      else track.style.transition = "";
+
+      let offset;
+      if (cardsPerPage === 1) {
+        offset = currentIndex * (cardWidth + gap);
+      } else {
+        offset = currentIndex * ((cardWidth + gap) * cardsPerPage);
       }
-    }
-    function resetAutoplay() {
-      stopAutoplay();
-      startAutoplay();
+
+      track.style.transform = `translateX(-${offset}px)`;
+      updateDots();
+
+      if (!animate) requestAnimationFrame(() => (track.style.transition = ""));
     }
 
-    // Drag handlers
-    viewport.addEventListener("pointerdown", pointerDown);
-    viewport.addEventListener("pointermove", pointerMove);
-    viewport.addEventListener("pointerup", pointerUp);
-    viewport.addEventListener("pointerleave", pointerUp);
-    viewport.addEventListener("pointercancel", pointerUp);
+    function autoSlide() {
+      if (totalPages < 2) return;
+      moveToSlide((currentIndex + 1) % totalPages);
+    }
+    function startAutoSlide() {
+      stopAutoSlide();
+      if (totalPages > 1) autoSlideInterval = setInterval(autoSlide, 4000);
+    }
+    function stopAutoSlide() {
+      if (autoSlideInterval) clearInterval(autoSlideInterval);
+      autoSlideInterval = null;
+    }
 
-    function pointerDown(e) {
-      if (e.pointerType === "mouse" && e.button !== 0) return;
+    // ---- swipe (touch) + drag (mouse) ----
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragDiff = 0;
+    const SWIPE_THRESHOLD = 50;
+
+    // Mobile touch
+    carousel.addEventListener(
+      "touchstart",
+      (e) => {
+        if (!e.touches || e.touches.length === 0) return;
+        dragStartX = e.touches[0].clientX;
+        dragDiff = 0;
+        isDragging = true;
+        stopAutoSlide();
+      },
+      { passive: true }
+    );
+
+    carousel.addEventListener(
+      "touchmove",
+      (e) => {
+        if (!isDragging || !e.touches || e.touches.length === 0) return;
+        dragDiff = e.touches[0].clientX - dragStartX;
+      },
+      { passive: true }
+    );
+
+    carousel.addEventListener(
+      "touchend",
+      () => {
+        if (!isDragging) return;
+        isDragging = false;
+        handleSwipeRelease();
+        startAutoSlide();
+      },
+      { passive: true }
+    );
+
+    // Desktop mouse drag
+    carousel.addEventListener("mousedown", (e) => {
+      // only left click
+      if (e.button !== 0) return;
+      e.preventDefault();
+      dragStartX = e.clientX;
+      dragDiff = 0;
       isDragging = true;
-      startX = e.clientX;
-      track.style.transition = "none";
-      prevTranslate = -currentIndex * (slideWidth + gap);
-      stopAutoplay();
-      viewport.setPointerCapture?.(e.pointerId);
-    }
+      stopAutoSlide();
+    });
 
-    function pointerMove(e) {
+    window.addEventListener("mousemove", (e) => {
       if (!isDragging) return;
-      const dx = e.clientX - startX;
-      currentTranslate = prevTranslate + dx;
-      setTranslate(currentTranslate);
-    }
+      dragDiff = e.clientX - dragStartX;
+    });
 
-    function pointerUp(e) {
+    window.addEventListener("mouseup", () => {
       if (!isDragging) return;
       isDragging = false;
-      const dx = (e.clientX || startX) - startX;
-      const movedFraction = Math.abs(dx) / (slideWidth + gap);
-      if (dx < 0 && movedFraction > SNAP_THRESHOLD) {
-        goToSlide(currentIndex + 1);
-      } else if (dx > 0 && movedFraction > SNAP_THRESHOLD) {
-        goToSlide(currentIndex - 1);
-      } else {
-        goToSlide(currentIndex);
-      }
-      resetAutoplay();
-      try {
-        viewport.releasePointerCapture?.(e.pointerId);
-      } catch {}
-    }
-
-    // Keyboard nav
-    viewport.addEventListener("keydown", (e) => {
-      if (e.key === "ArrowRight") {
-        goToSlide(currentIndex + 1);
-        resetAutoplay();
-      }
-      if (e.key === "ArrowLeft") {
-        goToSlide(currentIndex - 1);
-        resetAutoplay();
-      }
+      handleSwipeRelease();
+      startAutoSlide();
     });
 
-    // Touch toggle card buttons
-    const isTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
-    if (isTouch) {
-      cards.forEach((card) => {
-        card.addEventListener("click", (ev) => {
-          if (ev.target.closest(".card-buttons")) return;
-          cards.forEach((c) => c.classList.remove("show-buttons"));
-          card.classList.toggle("show-buttons");
-        });
-      });
-      document.addEventListener("click", (ev) => {
-        if (!ev.target.closest(".project-card")) {
-          cards.forEach((c) => c.classList.remove("show-buttons"));
+    function handleSwipeRelease() {
+      if (Math.abs(dragDiff) > SWIPE_THRESHOLD) {
+        if (dragDiff > 0) {
+          moveToSlide(currentIndex - 1);
+        } else {
+          moveToSlide(currentIndex + 1);
         }
-      });
+      }
+      dragDiff = 0;
     }
 
-    // Prevent image drag
-    cards.forEach((imgCard) => {
-      imgCard.querySelectorAll("img").forEach((img) => {
-        img.ondragstart = () => false;
-      });
+    // Pause on hover (desktop)
+    carousel.addEventListener("mouseenter", stopAutoSlide);
+    carousel.addEventListener("mouseleave", startAutoSlide);
+
+    // Recalculate on resize
+    window.addEventListener("resize", () => {
+      const prevCardsPerPage = cardsPerPage;
+      cardsPerPage = getCardsPerPage();
+      totalPages = Math.max(1, Math.ceil(cards.length / cardsPerPage));
+
+      // keep the first visible page consistent
+      currentIndex = clamp(currentIndex, 0, totalPages - 1);
+
+      buildDots();
+      moveToSlide(currentIndex, false);
+
+      // autoplay rules might change if page count collapsed to 1
+      if (totalPages < 2) stopAutoSlide();
+      else if (!autoSlideInterval) startAutoSlide();
     });
+  }
 
-    // Init
-    updateSizes();
-    goToSlide(0);
-    startAutoplay();
-  });
-})();
+  // ---- Tab switching ----
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const tabName = btn.dataset.tab;
 
-// Tab switching
-const tabButtons = document.querySelectorAll(".tab-btn");
-const tabContents = document.querySelectorAll(".tab-content");
+      tabButtons.forEach((b) => b.classList.remove("active"));
+      document.querySelectorAll(".tab-content").forEach((c) => {
+        c.classList.remove("active");
+      });
 
-tabButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    tabButtons.forEach((btn) => btn.classList.remove("active"));
-    button.classList.add("active");
-    tabContents.forEach((content) => content.classList.remove("active"));
-    const target = button.getAttribute("data-tab");
-    document
-      .querySelector(`[data-tab-content="${target}"]`)
-      .classList.add("active");
+      btn.classList.add("active");
+      document
+        .querySelector(`[data-tab-content="${tabName}"]`)
+        .classList.add("active");
+    });
   });
 });

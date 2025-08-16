@@ -574,263 +574,13 @@ footer {
 
 /* End Skills Section */
 
-/* Start Sample Projects Section */
-
-.projects {
-  background: #0d1b2a;
-  padding: 80px 40px;
-  color: #fff;
-  overflow: hidden;
-}
-
-.projects h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-/* viewport that hides overflow */
-.carousel-viewport {
-  position: relative;
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-}
-
-/* track that moves */
-.projects-track {
-  display: flex;
-  gap: 30px;
-  transition: transform 0.45s ease;
-  will-change: transform;
-  padding: 10px 0;
-}
-
-/* individual card */
-.project-card {
-  flex: 0 0 320px;
-  box-sizing: border-box;
-  min-height: 360px;
-  background: #1b263b;
-  border: 1px solid #00d4ff;
-  border-radius: 15px;
-  padding: 28px 22px 90px 22px;
-  text-align: center;
-  position: relative;
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  cursor: grab;
-}
-
-/* WIP cover */
-.project-card[data-status="wip"]::before {
-  content: "WORK IN PROGRESS";
-  position: absolute;
-  inset: 0;
-  background: rgba(20, 20, 20, 0.65);
-  color: var(--primary-color, #00bcd4);
-  font-family: inherit;
-  font-weight: 700;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  z-index: 10;
-  padding: 15px;
-  letter-spacing: 1px;
-  border-radius: 15px;
-  backdrop-filter: blur(2px);
-}
-
-/* Subtle card desaturation */
-.project-card[data-status="wip"] img {
-  filter: grayscale(40%) brightness(0.9);
-}
-
-/* when dragging */
-.project-card:active {
-  cursor: grabbing;
-}
-
-/* image/title/desc */
-.project-card img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 15px;
-  pointer-events: none;
-  user-select: none;
-}
-
-.project-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #00d4ff;
-}
-
-.project-card p {
-  font-size: 0.95rem;
-  color: #ccc;
-  margin-bottom: 6px;
-  line-height: 1.4;
-}
-
-/* hover highlight */
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.12);
-}
-
-/* buttons that slide up from bottom WITHOUT covering description */
-.card-buttons {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 110%);
-  bottom: 18px;
-  display: flex;
-  gap: 12px;
-  transition: transform 0.32s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.32s;
-  opacity: 0;
-}
-
-/* show on hover (desktop) or when .show-buttons class (touch) */
-.project-card:hover .card-buttons,
-.project-card.show-buttons .card-buttons {
-  transform: translate(-50%, 0);
-  opacity: 1;
-}
-
-/* overlay covers the whole card but stays transparent */
-.card-overlay {
-  position: absolute;
-  inset: 0;
-  background: transparent; /* no dark background */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* center vertically */
-  align-items: center; /* center horizontally */
-  gap: 15px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  padding: 20px;
-}
-
-/* show overlay on hover or tap */
-.project-card:hover .card-overlay,
-.project-card.show-buttons .card-overlay {
-  opacity: 1;
-}
-
-/* hide the original content when overlay is shown */
-.project-card:hover img,
-.project-card:hover h3,
-.project-card:hover p,
-.project-card.show-buttons img,
-.project-card.show-buttons h3,
-.project-card.show-buttons p {
-  opacity: 0;
-}
-
-/* button styles */
-.card-overlay .btn {
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  transition: transform 0.2s ease, background 0.3s ease;
-  cursor: pointer;
-}
-
-.card-overlay .btn.primary {
-  background: #00d4ff;
-  color: #000;
-}
-
-.card-overlay .btn.secondary {
-  background: transparent;
-  border: 2px solid #00d4ff;
-  color: #00d4ff;
-}
-
-.card-overlay .btn:hover {
-  transform: scale(1.05);
-}
-
-/* dots */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 18px;
-}
-
-.carousel-dots button {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: none;
-  background: #666;
-  cursor: pointer;
-  transition: background 0.25s ease, transform 0.15s ease;
-}
-
-.carousel-dots button.active {
-  background: #00d4ff;
-  transform: scale(1.15);
-}
-
-/* responsive adjustments */
-@media (max-width: 900px) {
-  .project-card {
-    flex: 0 0 280px;
-    height: 320px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-  }
-}
-
-@media (max-width: 600px) {
-  .projects {
-    padding: 40px 16px;
-  }
-  .projects-track {
-    gap: 18px;
-  }
-  .project-card {
-    flex: 0 0 86%;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-    padding-bottom: 86px;
-  }
-  .carousel-viewport {
-    padding-bottom: 8px;
-  }
-}
-
-/* End Sample Projects Section */
-
 /* Star Tab Section */
 
-/* Tabs Styling */
 .project-tabs {
   display: flex;
   justify-content: center;
   gap: 15px;
+  margin-top: 20px;
   margin-bottom: 25px;
   flex-wrap: wrap;
 }
@@ -856,7 +606,6 @@ footer {
   color: #000;
 }
 
-/* Hide all tab content except active */
 .tab-content {
   display: none;
 }
@@ -867,21 +616,209 @@ footer {
 
 /* End Tab Section */
 
+/* Start Sample Projects Section */
+
+.projects {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 40px;
+  --gap: 16px;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+  touch-action: pan-y;
+}
+
+.projects-track {
+  display: flex;
+  gap: var(--gap);
+  cursor: grab;
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+
+.projects-track:active {
+  cursor: grabbing;
+}
+
+.projects-track.centered {
+  justify-content: center;
+}
+
+.project-card {
+  position: relative; /* Add this */
+  flex: 0 0 calc((100% - (2 * var(--gap))) / 3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* optional, keep space between content and bottom */
+  background: #1b263b;
+  border: 1px solid #00d4ff;
+  border-radius: 15px;
+  padding: 28px 22px 28px 22px; /* reduce bottom padding */
+  min-height: 360px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: grab;
+}
+
+.project-card .card-overlay {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  position: absolute; /* Add this */
+  bottom: 16px;       /* Distance from bottom of card */
+  left: 0;
+  width: 100%;
+  padding: 0 22px;
+}
+
+
+.project-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  margin: 0 0 8px 0;
+  color: #00d4ff;
+}
+.project-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin: 0;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.12);
+}
+
+
+.project-card .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card .btn.primary {
+  background: #00d4ff;
+  color: #000;
+}
+
+.project-card .btn.secondary {
+  background: transparent;
+  border: 2px solid #00d4ff;
+  color: #00d4ff;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #666;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.15s;
+}
+
+.carousel-dots .dot.active {
+  background: #00d4ff;
+  transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    flex: 0 0 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 28px 22px 20px 22px; /* normal bottom padding */
+    position: relative; /* keep relative in case needed */
+    min-height: auto;   /* allow card to expand based on content */
+  }
+
+  .project-card .card-overlay {
+    position: static; /* remove absolute positioning */
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    margin-top: 12px; /* spacing from description */
+    width: 100%;
+    padding: 0;
+  }
+
+  .project-card .card-overlay .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+/* End Sample Projects Section */
+
+/* Start WIP */
+
+.project-card[data-status="wip"]::before {
+  content: "WORK IN PROGRESS";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.65);
+  color: var(--primary-color, #00bcd4);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+  padding: 15px;
+  letter-spacing: 1px;
+  border-radius: 15px;
+  backdrop-filter: blur(2px);
+}
+
+/* Subtle card desaturation */
+.project-card[data-status="wip"] img {
+  filter: grayscale(40%) brightness(0.9);
+}
+
+/* End WIP */
+
 #particles-js {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* So content is above the particles */
+  z-index: -1;
   background: #0d1b2a;
 }
 
-.project-card {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.6s ease-out;
-}
 .project-card.animate-show {
   opacity: 1;
   transform: translateY(0);

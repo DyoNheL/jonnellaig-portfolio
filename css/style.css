@@ -273,32 +273,11 @@ footer {
 }
 
 .robot-icon {
-  display: inline-block;
-  margin-left: 1px;
-  height: 1em;
-  width: auto;
-  vertical-align: middle;
-  animation: floatBot 2s ease-in-out infinite;
-}
-
-@keyframes floatBot {
-  0% {
-    transform: translateY(0);
+    display: inline-block;
+    vertical-align: middle;
+    transform-origin: bottom center;
+    transition: transform 0.2s ease;
   }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 768px) {
-  .robot-icon svg {
-    width: 58px;
-    height: 58px;
-  }
-}
 
 /* Animated Icon */
 

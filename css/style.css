@@ -625,6 +625,13 @@ footer {
   --gap: 16px;
 }
 
+.projects h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
 .carousel-viewport {
   overflow: hidden;
   width: 100%;
@@ -648,16 +655,16 @@ footer {
 }
 
 .project-card {
-  position: relative; /* Add this */
+  position: relative;
   flex: 0 0 calc((100% - (2 * var(--gap))) / 3);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* optional, keep space between content and bottom */
+  justify-content: flex-start;
   background: #1b263b;
   border: 1px solid #00d4ff;
   border-radius: 15px;
-  padding: 28px 22px 28px 22px; /* reduce bottom padding */
+  padding: 28px 22px 28px 22px;
   min-height: 360px;
   text-align: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -670,13 +677,12 @@ footer {
   display: flex;
   gap: 12px;
   justify-content: center;
-  position: absolute; /* Add this */
-  bottom: 16px;       /* Distance from bottom of card */
+  position: absolute;
+  bottom: 16px;
   left: 0;
   width: 100%;
   padding: 0 22px;
 }
-
 
 .project-card img {
   width: 80px;
@@ -703,7 +709,6 @@ footer {
   transform: translateY(-6px);
   box-shadow: 0 10px 30px rgba(0, 212, 255, 0.12);
 }
-
 
 .project-card .btn {
   display: inline-flex;
@@ -757,7 +762,7 @@ footer {
     margin: 0 auto;
     padding: 28px 22px 20px 22px; /* normal bottom padding */
     position: relative; /* keep relative in case needed */
-    min-height: auto;   /* allow card to expand based on content */
+    min-height: auto; /* allow card to expand based on content */
   }
 
   .project-card .card-overlay {
@@ -775,8 +780,6 @@ footer {
     justify-content: center;
   }
 }
-
-
 
 /* End Sample Projects Section */
 
@@ -855,8 +858,8 @@ footer .social-links a {
 }
 
 footer .social-links a:hover {
-  color: #ff4d6d;
   transform: scale(1.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 footer p {
@@ -865,4 +868,96 @@ footer p {
   margin-top: 10px;
 }
 
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 100px;
+  background-color: #00d4ff;
+  color: #000;
+  text-align: center;
+  padding: 5px 6px;
+  border-radius: 4px;
+
+  /* Position */
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  font-size: 12px;
+  z-index: 10;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #00d4ff transparent transparent transparent;
+}
+
+/* Show tooltip on hover */
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* End Footer Section */
+
+/* Start Scroll to Top Button */
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  z-index: 100;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#scrollTopBtn.show {
+  transform: scale(1);
+  opacity: 1;
+  animation: pulseArrow 1.2s infinite alternate;
+}
+
+#scrollTopBtn:hover {
+  transform: scale(1.2);
+}
+
+/* Arrow pulse */
+@keyframes pulseArrow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* End Scroll to Top Button */

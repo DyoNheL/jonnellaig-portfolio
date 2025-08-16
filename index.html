@@ -36,7 +36,7 @@
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Sample Projects</a></li>
-                <li><a href="#footer" class="nav-link">Contact Me</a></li>
+                <li><a href="#footer" class="nav-link">Let’s Connect</a></li>
             </ul>
             <div id="menu-toggle" class="menu-toggle" onclick="toggleMenu()">☰</div>
         </nav>
@@ -75,7 +75,7 @@
                 process improvement.
             </p>
             <div class="home-buttons">
-                <a href="#portfolio" class="btn primary"><i class="fas fa-briefcase"></i> Hire Me</a>
+                <a href="#footer" class="btn primary"><i class="fas fa-briefcase"></i> Hire Me</a>
                 <a href="files/jonnellaig_cv.pdf" download class="btn secondary"><i class="fas fa-download"></i> Get
                     CV</a>
             </div>
@@ -249,7 +249,8 @@
         <div class="carousel-viewport tab-content" data-tab-content="documentation" data-aos="fade-up">
             <div class="projects-track">
                 <div class="project-card" data-status="wip">
-                    <img src="img/projects/documentation/test-documentation.png" alt="Test Documentation" draggable="false">
+                    <img src="img/projects/documentation/test-documentation.png" alt="Test Documentation"
+                        draggable="false">
                     <h3>Test Documentation</h3>
                     <p>Created structured test documentation including test cases, checklists, and traceability
                         matrices.</p>
@@ -276,7 +277,8 @@
         <div class="carousel-viewport tab-content" data-tab-content="cicd" data-aos="fade-up">
             <div class="projects-track">
                 <div class="project-card" data-status="wip">
-                    <img src="img/projects/cicd/cicd.png" alt="Automated Testing Pipeline with Jenkins" draggable="false">
+                    <img src="img/projects/cicd/cicd.png" alt="Automated Testing Pipeline with Jenkins"
+                        draggable="false">
                     <h3>Automated Testing Pipeline with Jenkins</h3>
                     <p>Integration of Selenium/Robot tests in Jenkins pipeline. Pulls code from GitHub, runs tests,
                         generates reports, and sends notifications.
@@ -291,20 +293,45 @@
         </div>
     </section>
 
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="tooltip">
+        <span class="tooltip-text">Go to top</span>
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <!-- Robot head -->
+            <rect x="6" y="2" width="12" height="8" rx="2" ry="2" />
+            <!-- Eyes -->
+            <circle id="leftEye" cx="9" cy="6" r="1" fill="#4CAF50" />
+            <circle id="rightEye" cx="15" cy="6" r="1" fill="#4CAF50" />
+            <!-- Arrow pointing up -->
+            <line id="arrowLine" x1="12" y1="14" x2="12" y2="22" />
+            <polyline id="arrowTip" points="8,18 12,14 16,18" />
+        </svg>
+    </button>
+
     <!-- ===== FOOTER ===== -->
     <footer id="footer">
-        <h2>Contact Me</h2>
+        <h2>Connect on My Networks</h2>
 
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/jonnellaig/" target="_blank" aria-label="LinkedIn">
+            <a href="mailto:jonnellaig@gmail.com" target="_blank" class="tooltip" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+                <span class="tooltip-text">Email Me</span>
+            </a>
+            <a href="https://www.linkedin.com/in/jonnellaig/" target="_blank" class="tooltip" aria-label="LinkedIn">
                 <i class="fab fa-linkedin"></i>
+                <span class="tooltip-text">Connect with me on LinkedIn</span>
             </a>
-            <a href="https://github.com/DyoNheL/" target="_blank" aria-label="GitHub">
+            <a href="https://github.com/DyoNheL/" target="_blank" class="tooltip" aria-label="GitHub">
                 <i class="fab fa-github"></i>
+                <span class="tooltip-text">View my GitHub projects</span>
             </a>
-            <a href="https://ph.jobstreet.com/profile/jonnel-laig-kqstj6n2ML" target="_blank" aria-label="jobstreet">
+            <a href="https://ph.jobstreet.com/profile/jonnel-laig-kqstj6n2ML" target="_blank" class="tooltip"
+                aria-label="jobstreet">
                 <i class="fas fa-briefcase"></i>
+                <span class="tooltip-text">See my professional profile on JobStreet</span>
             </a>
+
         </div>
 
         <p>&copy;

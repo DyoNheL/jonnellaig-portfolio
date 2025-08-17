@@ -14,7 +14,7 @@
     <script src="js/script.js" defer></script>
     <script src="js/projects.js" defer></script>
     <script src="js/navbar.js" defer></script>
-    <script src="js/openModal.js" defer></script>
+    <script src="js/experience.js" defer></script>
     <script src="js/projectExperienceCard.js" defer></script>
     <script src="js/sampleAutomationCard.js" defer></script>
     <script src="js/skills.js" defer></script>
@@ -96,51 +96,130 @@
             <div class="exp-card">
                 <h2>Years of Experience</h2>
                 <div class="timeline">
-                    <div class="timeline-item" onclick="openModal('modalSecondJob')">
+
+                    <!-- Timeline item -->
+                    <div class="timeline-item" onclick="toggleTimeline(this)">
                         <div class="year">2022 - Present</div>
-                        <div class="details">Application Systems Engineer - WeServ Systems International, Inc.</div>
-                    </div>
-                    <div class="timeline-item" onclick="openModal('modalFirstJob')">
-                        <div class="year">2021 - 2022</div>
-                        <div class="details">Application Systems Engineer/Trainee - WeServ Systems International, Inc.
+                        <div class="details">
+                            Application Systems Engineer - WeServ Systems International, Inc.
+                            <ul class="details-list">
+                                <li>Automated test cases using Selenium and Robot Framework.</li>
+                                <li>Created detailed test documentation and reports.</li>
+                                <li>Tracked and reported bugs using Jira and other tools.</li>
+                                <li>Performed regression and smoke testing on multiple web applications.</li>
+                                <li>Developed scripts using a test recording tool.</li>
+                                <li>Conducted training sessions for team members on project-related tasks.</li>
+                                <li>Analyzed and reviewed system requirements.</li>
+                                <li>Conducted internal code reviews.</li>
+                                <li>Assisted team members with their tasks.</li>
+                            </ul>
                         </div>
                     </div>
+
+                    <div class="timeline-item" onclick="toggleTimeline(this)">
+                        <div class="year">2021 - 2022</div>
+                        <div class="details">
+                            Application Systems Engineer/Trainee - WeServ Systems International, Inc.
+                            <ul class="details-list">
+                                <li>Created program specification documents.</li>
+                                <li>Created program test preparation documents.</li>
+                                <li>Created program test execution documents.</li>
+                                <li>Developed Java code for unit testing using JUnit.</li>
+                                <li>Developed Java code for web testing using Selenium.</li>
+                                <li>Developed Robot Framework scripts for web testing.</li>
+                                <li>Executed program tests for the developed code and scripts.</li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+
 
             <!-- RIGHT: Project Experience -->
             <div class="project-card-exp">
                 <h2>Project Experience</h2>
                 <div class="project-list">
+
+                    <!-- Project Item -->
+                    <div class="project-item" onclick="toggleProject(this)">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <div class="project-details">
+                            <span class="project-title">Web and Mobile Automation Testing</span>
+                            <ul class="project-desc">
+                                <li>Automated functional test cases for web and mobile applications.</li>
+                                <li>Projects include E-Commerce, Banking, and Racing platforms.</li>
+                                <li>Performed regression and smoke testing.</li>
+                                <li>Validated checkout, payment, and user authentication flows.</li>
+                                <li>Ensured consistency across multiple platforms and devices.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-item" onclick="toggleProject(this)">
+                        <i class="fa-solid fa-users"></i>
+                        <div class="project-details">
+                            <span class="project-title">Login Authentication Testing</span>
+                            <ul class="project-desc">
+                                <li>Automated login, logout, and session handling.</li>
+                                <li>Verified authentication and security workflows.</li>
+                                <li>Tested multiple user roles and permission levels.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-item" onclick="toggleProject(this)">
+                        <i class="fa-solid fa-gear"></i>
+                        <div class="project-details">
+                            <span class="project-title">CMS / Admin Portal Testing</span>
+                            <ul class="project-desc">
+                                <li>Automated creation, editing, and deletion of content.</li>
+                                <li>Validated workflows in CMS and admin portals.</li>
+                                <li>Ensured accurate role-based access control.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-item" onclick="toggleProject(this)">
+                        <i class="fa-solid fa-database"></i>
+                        <div class="project-details">
+                            <span class="project-title">Database Testing</span>
+                            <ul class="project-desc">
+                                <li>Verified backend data integrity and consistency.</li>
+                                <li>Verified data consistency in database using SQL queries.</li>
+                                <li>Tested CRUD operations between application and database.</li>
+                                <li>Validated transactional data after automation flows.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-item" onclick="toggleProject(this)">
+                        <i class="fa-solid fa-table"></i>
+                        <div class="project-details">
+                            <span class="project-title">Dynamic Table Automation</span>
+                            <ul class="project-desc">
+                                <li>Validated dynamic web tables for correctness.</li>
+                                <li>Automated sorting, filtering, and pagination tests.</li>
+                                <li>Verified data consistency between UI and database.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-item" onclick="toggleProject(this)">
+                        <i class="fa-solid fa-file-excel"></i>
+                        <div class="project-details">
+                            <span class="project-title">Data-Driven Test Suites</span>
+                            <ul class="project-desc">
+                                <li>Implemented automated tests using Excel, CSV, or database inputs.</li>
+                                <li>Covered multiple test scenarios efficiently</li>
+                                <li>Reduced manual testing effort with reusable data sets.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- ===== MODALS ===== -->
-    <div id="modalSecondJob" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modalSecondJob')">&times;</span>
-            <h2>Application Systems Engineer - WeServ Systems International, Inc.</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, sed blanditiis cupiditate placeat
-                sapiente fugiat amet illum, repellendus quo doloribus libero recusandae quod corrupti nihil natus velit
-                id incidunt facere!
-            </p>
-        </div>
-    </div>
-
-    <div id="modalFirstJob" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('modalFirstJob')">&times;</span>
-            <h2>Application Systems Engineer/Trainee - WeServ Systems International, Inc.</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, sed blanditiis cupiditate placeat
-                sapiente fugiat amet illum, repellendus quo doloribus libero recusandae quod corrupti nihil natus velit
-                id incidunt facere!
-            </p>
-        </div>
-    </div>
 
     <!-- ===== SKILLS ===== -->
     <section class="skills" id="skills">

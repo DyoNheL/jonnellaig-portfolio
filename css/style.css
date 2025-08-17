@@ -25,7 +25,7 @@ html {
   color: #00d4ff;
   gap: 8px;
   text-decoration: none;
-  cursor: pointer;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
 }
 
 .logo i {
@@ -84,12 +84,13 @@ header {
 
 .nav-links a:hover {
   color: #00d4ff;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
 }
 
 .menu-toggle {
   display: none;
   font-size: 1.8em;
-  cursor: pointer;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
 }
 
 .nav-links li a.active {
@@ -167,6 +168,7 @@ section {
 .btn.primary:hover {
   transform: translateY(-8px);
   box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  cursor: url("../img/robot-arm-cursor.png"), auto;
 }
 
 .btn.secondary {
@@ -178,6 +180,7 @@ section {
 .btn.secondary:hover {
   background: rgba(0, 212, 255, 0.1);
   box-shadow: 0 0 10px #00d4ff;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
 }
 
 .summary,
@@ -267,21 +270,18 @@ footer {
 
 /* Start Home Section */
 
-/* Animated Icon */
 .highlight-name {
   color: #00d4ff;
 }
 
 .robot-icon {
-    display: inline-block;
-    vertical-align: middle;
-    transform-origin: bottom center;
-    transition: transform 0.2s ease;
-  }
+  display: inline-block;
+  vertical-align: middle;
+  transform-origin: bottom center;
+  transition: transform 0.2s ease;
+}
 
-/* Animated Icon */
 
-/* Container */
 .home-section {
   display: flex;
   align-items: center;
@@ -291,7 +291,6 @@ footer {
   flex-wrap: wrap;
 }
 
-/* Left avatar image */
 .home-image {
   flex: 1;
   display: flex;
@@ -303,7 +302,6 @@ footer {
   height: auto;
 }
 
-/* Right text content */
 .home-content {
   flex: 2;
   min-width: 300px;
@@ -325,8 +323,6 @@ footer {
   color: #bcb8b8;
 }
 
-/* Buttons */
-/* Center buttons under text */
 .home-buttons {
   display: flex;
   justify-content: center;
@@ -367,27 +363,37 @@ footer {
   transform: scale(1.05);
 }
 
-/* Mobile view */
 @media (max-width: 768px) {
   .home-section {
+    display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
-  /* Avatar comes first */
   .home-image {
-    order: -1;
-    margin-bottom: 5px;
+    display: none;
   }
 
-  .home-image img {
-    max-width: 200px;
+  .home-content h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .robot-icon {
+    order: -1;
+    margin-bottom: 10px;
+    width: 100px;
+    height: auto;
   }
 
   .home-buttons {
     justify-content: center;
   }
 }
+
+/* End Home Section */
 
 /* Start Experience Section */
 
@@ -413,7 +419,7 @@ footer {
   padding: 15px;
   margin: 10px 0;
   border-radius: 8px;
-  cursor: pointer;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
   transition: 0.3s;
 }
 .timeline-item:hover {
@@ -469,7 +475,7 @@ footer {
   float: right;
   font-size: 28px;
   font-weight: bold;
-  cursor: pointer;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
 }
 .close:hover {
   color: #fff;
@@ -571,7 +577,7 @@ footer {
   padding: 8px 16px;
   border-radius: 6px;
   font-weight: bold;
-  cursor: pointer;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
   transition: all 0.3s ease;
 }
 
@@ -698,7 +704,7 @@ footer {
   font-size: 0.9rem;
   text-decoration: none;
   transition: transform 0.2s ease, background 0.3s ease;
-  cursor: pointer;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
 }
 
 .project-card .btn.primary {
@@ -725,7 +731,7 @@ footer {
   border-radius: 50%;
   border: none;
   background: #666;
-  cursor: pointer;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
   transition: background 0.25s, transform 0.15s;
 }
 
@@ -839,6 +845,7 @@ footer .social-links a {
 footer .social-links a:hover {
   transform: scale(1.2);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
 }
 
 footer p {
@@ -909,7 +916,7 @@ footer p {
   z-index: 100;
   background: none;
   border: none;
-  cursor: pointer;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
   padding: 0;
   transform: scale(0);
   opacity: 0;

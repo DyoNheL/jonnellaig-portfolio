@@ -606,7 +606,7 @@ footer {
     -webkit-overflow-scrolling: touch;
   }
   .skills-track {
-    animation: scrollSkills 10s linear infinite;
+    animation: scrollSkills 12s linear infinite;
   }
 }
 

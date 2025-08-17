@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>Jonnel Laig</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/projects.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/experience.js" defer></script>
+    <script src="js/projectExperienceCard.js" defer></script>
+    <script src="js/sampleAutomationCard.js" defer></script>
+    <script src="js/skills.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="particles-js"></div>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <i class="fas fa-robot"></i>
+                <span>&nbsp;DyoNheL</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Sample Projects</a></li>
+                <li><a href="#footer" class="nav-link">Let’s Connect</a></li>
+            </ul>
+            <div id="menu-toggle" class="menu-toggle" onclick="toggleMenu()">☰</div>
+        </nav>
+    </header>
+
+    <!-- ===== INTRODUCTION ===== -->
+    <section id="home" class="home-section">
+        <div class="home-image">
+            <img src="img/profile.png" alt="Profile Avatar">
+        </div>
+
+        <div class="home-content">
+            <h1>
+                Hi, I'm <span class="highlight-name">Jonnel</span>
+                <span class="robot-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 64 64" fill="none">
+                        <!-- Body -->
+                        <rect x="10" y="20" width="44" height="30" rx="5" fill="#00d4ff" stroke="#333"
+                            stroke-width="2" />
+                        <!-- Eyes -->
+                        <circle id="leftEye" cx="22" cy="35" r="4" fill="white" />
+                        <circle id="rightEye" cx="42" cy="35" r="4" fill="white" />
+                        <!-- Mouth -->
+                        <rect x="27" y="45" width="10" height="3" rx="1" fill="white" />
+                        <!-- Antenna -->
+                        <line x1="32" y1="10" x2="32" y2="20" stroke="#333" stroke-width="2" />
+                        <circle id="antennaLight" cx="32" cy="8" r="3" fill="#ff5252" />
+                        <!-- Right arm -->
+                        <line id="rightArm" x1="54" y1="30" x2="44" y2="30" stroke="#333" stroke-width="3"
+                            stroke-linecap="round" />
+                    </svg>
+                </span>
+            </h1>
+
+            <p class="intro-text">
+                A dedicated QA Automation Tester with over 4 years of experience ensuring the quality and
+                reliability of web applications through robust automation solutions. Proficient in Selenium, Robot
+                Framework,
+                and other testing tools, I specialize in designing, developing, and executing automated test
+                scripts that improve efficiency, reduce defects, and enhance product quality. My background spans both
+                Automation and Manual Testing, with a strong focus on test strategy, defect management, and continuous
+                process improvement.
+            </p>
+            <div class="home-buttons">
+                <a href="#footer" class="btn primary"><i class="fas fa-briefcase"></i> Hire Me</a>
+                <a href="files/jonnellaig_cv.pdf" download class="btn secondary"><i class="fas fa-download"></i> Get
+                    CV</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXPERIENCE TIMELINE ===== -->
+    <section id="experience" class="experience" data-aos="fade-up">
+        <div class="experience-container">
+            <!-- LEFT: Years of Experience -->
+            <div class="exp-card">
+                <h2>Years of Experience</h2>
+                <div class="timeline">
+
+                    <!-- Timeline item -->
+                    <div class="timeline-item" onclick="toggleTimeline(this)">
+                        <div class="year">2022 - Present</div>
+                        <div class="details">
+                            Application Systems Engineer - WeServ Systems International, Inc.
+                            <ul class="details-list">
+                                <li>Automated test cases using Selenium and Robot Framework.</li>
+                                <li>Created detailed test documentation and reports.</li>
+                                <li>Tracked and reported bugs using Jira and other tools.</li>
+                                <li>Performed regression and smoke testing on multiple web applications.</li>
+                                <li>Developed scripts using a test recording tool.</li>
+                                <li>Conducted training sessions for team members on project-related tasks.</li>
+                                <li>Analyzed and reviewed system requirements.</li>
+                                <li>Conducted internal code reviews.</li>
+                                <li>Assisted team members with their tasks.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" onclick="toggleTimeline(this)">
+                        <div class="year">2021 - 2022</div>
+                        <div class="details">
+                            Application Systems Engineer/Trainee - WeServ Systems International, Inc.
+                            <ul class="details-list">
+                                <li>Created program specification documents.</li>
+                                <li>Created program test preparation documents.</li>
+                                <li>Created program test execution documents.</li>
+                                <li>Developed Java code for unit testing using JUnit.</li>
+                                <li>Developed Java code for web testing using Selenium.</li>
+                                <li>Developed Robot Framework scripts for web testing.</li>
+                                <li>Executed program tests for the developed code and scripts.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- RIGHT: Project Experience -->
+            <div class="project-card-exp">
+                <h2>Project Experience</h2>
+                <div class="project-list">
+
+                    <!-- Project Item -->
+                    <div class="project-item" onclick="toggleProject(this)">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <div class="project-details">
+                            <span class="project-title">Web and Mobile Automation Testing</span>
+                            <ul class="project-desc">
+                                <li>Automated functional test cases for web and mobile applications.</li>
+                                <li>Projects include E-Commerce, Banking, and Racing platforms.</li>
+                                <li>Performed regression and smoke testing.</li>
+                                <li>Validated checkout, payment, and user authentication flows.</li>
+                                <li>Ensured consistency across multiple platforms and devices.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-item" onclick="toggleProject(this)">
+                        <i class="fa-solid fa-users"></i>
+                        <div class="project-details">
+                            <span class="project-title">Login Authentication Testing</span>
+                            <ul class="project-desc">
+                                <li>Automated login, logout, and session handling.</li>
+                                <li>Verified authentication and security workflows.</li>
+                                <li>Tested multiple user roles and permission levels.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-item" onclick="toggleProject(this)">
+                        <i class="fa-solid fa-gear"></i>
+                        <div class="project-details">
+                            <span class="project-title">CMS / Admin Portal Testing</span>
+                            <ul class="project-desc">
+                                <li>Automated creation, editing, and deletion of content.</li>
+                                <li>Validated workflows in CMS and admin portals.</li>
+                                <li>Ensured accurate role-based access control.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-item" onclick="toggleProject(this)">
+                        <i class="fa-solid fa-database"></i>
+                        <div class="project-details">
+                            <span class="project-title">Database Testing</span>
+                            <ul class="project-desc">
+                                <li>Verified backend data integrity and consistency.</li>
+                                <li>Verified data consistency in database using SQL queries.</li>
+                                <li>Tested CRUD operations between application and database.</li>
+                                <li>Validated transactional data after automation flows.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-item" onclick="toggleProject(this)">
+                        <i class="fa-solid fa-table"></i>
+                        <div class="project-details">
+                            <span class="project-title">Dynamic Table Automation</span>
+                            <ul class="project-desc">
+                                <li>Validated dynamic web tables for correctness.</li>
+                                <li>Automated sorting, filtering, and pagination tests.</li>
+                                <li>Verified data consistency between UI and database.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="project-item" onclick="toggleProject(this)">
+                        <i class="fa-solid fa-file-excel"></i>
+                        <div class="project-details">
+                            <span class="project-title">Data-Driven Test Suites</span>
+                            <ul class="project-desc">
+                                <li>Implemented automated tests using Excel, CSV, or database inputs.</li>
+                                <li>Covered multiple test scenarios efficiently</li>
+                                <li>Reduced manual testing effort with reusable data sets.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="skills" id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-slider">
+            <div class="skills-track">
+                <div class="skill-card">
+                    <img src="img/skills/selenium.png" alt="Selenium" />
+                    <span>Selenium</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/robotframework.png" alt="Robot Framework" />
+                    <span>Robot Framework</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/java.png" alt="Java" />
+                    <span>Java</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/appium.png" alt="Appium" />
+                    <span>Appium</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/JUnit.png" alt="JUnit" />
+                    <span>JUnit</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/postman.png" alt="Postman" />
+                    <span>Postman</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/jira.png" alt="Jira" />
+                    <span>Jira</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/jenkins.png" alt="Jenkins" />
+                    <span>Jenkins</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/git.png" alt="GIT" />
+                    <span>GIT</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/sql.png" alt="SQL" />
+                    <span>SQL</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/selenium.png" alt="Selenium" />
+                    <span>Selenium</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/robotframework.png" alt="Robot Framework" />
+                    <span>Robot Framework</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SAMPLE PROJECT ===== -->
+    <section class="projects" id="projects">
+        <h2 data-aos="fade-up">Sample Projects</h2>
+
+        <!-- Tabs Navigation -->
+        <div class="project-tabs" data-aos="fade-up">
+            <button class="tab-btn active" data-tab="automation">Automation Samples</button>
+            <button class="tab-btn" data-tab="documentation">Documentation Samples</button>
+            <button class="tab-btn" data-tab="cicd">CI/CD Integration</button>
+        </div>
+
+        <!-- Automation Projects -->
+        <div class="carousel-viewport tab-content active" data-tab-content="automation" data-aos="fade-up">
+            <div class="projects-track">
+                <div class="project-card">
+                    <img src="img/projects/automation/ecommerce.png" alt="E-Commerce Website Automation"
+                        draggable="false">
+                    <h3>E-Commerce Website Automation</h3>
+                    <p>Automate login, product search, add-to-cart, and checkout flows using Java + Selenium. Includes
+                        test reports and data-driven test cases.</p>
+                    <div class="card-overlay">
+                        <a href="#" class="btn primary"><i class="fab fa-github"></i> View Repo</a>
+                        <a href="#" class="btn secondary"><i class="fas fa-external-link-alt"></i> View Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="img/projects/automation/banking-system.png" alt="Banking Portal Robot Framework Suite"
+                        draggable="false">
+                    <h3>Banking Portal Robot Framework Suite</h3>
+                    <p>End-to-end automation of login, funds transfer, and transaction verification using Robot
+                        Framework with data-driven testing.</p>
+                    <div class="card-overlay">
+                        <a href="#" class="btn primary"><i class="fab fa-github"></i> View Repo</a>
+                        <a href="#" class="btn secondary"><i class="fas fa-external-link-alt"></i> View Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-status="wip">
+                    <img src="img/projects/automation/api-testing.png" alt="API Functional Testing with Postman"
+                        draggable="false">
+                    <h3>API Functional Testing with Postman</h3>
+                    <p>Test GET, POST, PUT, DELETE APIs with Postman. Includes schema validation, chained requests, and
+                        HTML reports.</p>
+                    <div class="card-overlay">
+                        <a href="#" class="btn primary"><i class="fab fa-github"></i> View Repo</a>
+                        <a href="#" class="btn secondary"><i class="fas fa-external-link-alt"></i> View Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-dots"></div>
+        </div>
+
+        <!-- Documentation Samples -->
+        <div class="carousel-viewport tab-content" data-tab-content="documentation" data-aos="fade-up">
+            <div class="projects-track">
+                <div class="project-card" data-status="wip">
+                    <img src="img/projects/documentation/test-documentation.png" alt="Test Documentation"
+                        draggable="false">
+                    <h3>Test Documentation</h3>
+                    <p>Created structured test documentation including test cases, checklists, and traceability
+                        matrices.</p>
+                    <div class="card-overlay">
+                        <a href="#" class="btn primary"><i class="fab fa-github"></i> View Repo</a>
+                        <a href="#" class="btn secondary"><i class="fas fa-external-link-alt"></i> View Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-status="wip">
+                    <img src="img/projects/documentation/bug-tracking.png" alt="Bug Tracking" draggable="false">
+                    <h3>Bug Tracking</h3>
+                    <p>Logged and tracked issues using Jira with full defect lifecycle management and reporting.</p>
+                    <div class="card-overlay">
+                        <a href="#" class="btn primary"><i class="fab fa-github"></i> View Repo</a>
+                        <a href="#" class="btn secondary"><i class="fas fa-external-link-alt"></i> View Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-dots"></div>
+        </div>
+
+        <!-- CI/CD Integration -->
+        <div class="carousel-viewport tab-content" data-tab-content="cicd" data-aos="fade-up">
+            <div class="projects-track">
+                <div class="project-card" data-status="wip">
+                    <img src="img/projects/cicd/cicd.png" alt="Automated Testing Pipeline with Jenkins"
+                        draggable="false">
+                    <h3>Automated Testing Pipeline with Jenkins</h3>
+                    <p>Integration of Selenium/Robot tests in Jenkins pipeline. Pulls code from GitHub, runs tests,
+                        generates reports, and sends notifications.
+                    </p>
+                    <div class="card-overlay">
+                        <a href="#" class="btn primary"><i class="fab fa-github"></i> View Repo</a>
+                        <a href="#" class="btn secondary"><i class="fas fa-external-link-alt"></i> View Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-dots"></div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollTopBtn" class="tooltip">
+        <span class="tooltip-text">Go to top</span>
+        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <!-- Robot head -->
+            <rect x="6" y="2" width="12" height="8" rx="2" ry="2" />
+            <!-- Eyes -->
+            <circle id="leftEye" cx="9" cy="6" r="1" fill="#4CAF50" />
+            <circle id="rightEye" cx="15" cy="6" r="1" fill="#4CAF50" />
+            <!-- Arrow pointing up -->
+            <line id="arrowLine" x1="12" y1="14" x2="12" y2="22" />
+            <polyline id="arrowTip" points="8,18 12,14 16,18" />
+        </svg>
+    </button>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer">
+        <h2>Connect on My Networks</h2>
+
+        <div class="social-links">
+            <a href="mailto:jonnellaig@gmail.com" target="_blank" class="tooltip" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+                <span class="tooltip-text">Email Me</span>
+            </a>
+            <a href="https://www.linkedin.com/in/jonnellaig/" target="_blank" class="tooltip" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+                <span class="tooltip-text">Connect with me on LinkedIn</span>
+            </a>
+            <a href="https://github.com/DyoNheL/" target="_blank" class="tooltip" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+                <span class="tooltip-text">View my GitHub projects</span>
+            </a>
+            <a href="https://ph.jobstreet.com/profile/jonnel-laig-kqstj6n2ML" target="_blank" class="tooltip"
+                aria-label="jobstreet">
+                <i class="fas fa-briefcase"></i>
+                <span class="tooltip-text">See my professional profile on JobStreet</span>
+            </a>
+
+        </div>
+
+        <p>&copy;
+            <script>document.write(new Date().getFullYear());</script> Jonnel Laig. All Rights Reserved.
+        </p>
+    </footer>
+</body>
+
+</html>

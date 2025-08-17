@@ -1,0 +1,1002 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #0d1b2a;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Start Header */
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00d4ff;
+  gap: 8px;
+  text-decoration: none;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
+}
+
+.logo i {
+  font-size: 2rem;
+  color: #ff4d6d;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo:hover i {
+  transform: rotate(15deg) scale(1.2);
+  color: #00ff99;
+}
+
+.logo span {
+  color: #ffffff;
+}
+
+/* End Header */
+
+/* Start Navbar */
+
+header {
+  background: #1b263b;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #00d4ff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00d4ff;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8em;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
+}
+
+.nav-links li a.active {
+  color: #00d4ff;
+  font-weight: bold;
+  border-bottom: 2px solid #00d4ff;
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+  .nav-links li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0;
+  }
+
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+
+  .nav-links a:hover {
+    color: #00d4ff;
+  }
+
+  .nav-links.active {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* End Navbar */
+
+/* Start Sections */
+
+section {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.intro {
+  background: linear-gradient(120deg, #1b263b, #0d1b2a);
+}
+
+.intro h1 span {
+  color: #00d4ff;
+}
+
+.btn-group {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn.primary {
+  background: #00d4ff;
+  color: #000;
+}
+
+.btn.primary:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  cursor: url("../img/robot-arm-cursor.png"), auto;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid #00d4ff;
+  color: #00d4ff;
+}
+
+.btn.secondary:hover {
+  background: rgba(0, 212, 255, 0.1);
+  box-shadow: 0 0 10px #00d4ff;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
+}
+
+.summary,
+.skills,
+.projects {
+  background: #1b263b;
+}
+
+.timeline {
+  border-left: 3px solid #00d4ff;
+  margin: 20px auto;
+  padding-left: 20px;
+  max-width: 500px;
+  text-align: left;
+}
+
+.timeline-item {
+  margin-bottom: 20px;
+}
+
+.year {
+  font-weight: bold;
+  color: #00d4ff;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.skill-card {
+  background: #0d1b2a;
+  padding: 15px;
+  border: 1px solid #00d4ff;
+  border-radius: 5px;
+}
+
+.project-card {
+  background: #0d1b2a;
+  padding: 20px;
+  border: 1px solid #00d4ff;
+  max-width: 500px;
+  margin: auto;
+}
+
+footer {
+  background: #0d1b2a;
+  padding: 40px 20px;
+}
+
+.socials {
+  margin-bottom: 15px;
+}
+
+.socials a {
+  margin: 0 10px;
+  color: #00d4ff;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #1b263b;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* End Sections */
+
+/* Start Home Section */
+
+.highlight-name {
+  color: #00d4ff;
+}
+
+.robot-icon {
+  display: inline-block;
+  vertical-align: middle;
+  transform-origin: bottom center;
+  transition: transform 0.2s ease;
+}
+
+.home-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 10%;
+  flex-wrap: wrap;
+}
+
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.home-image img {
+  max-width: 500px;
+  height: auto;
+}
+
+.home-content {
+  flex: 2;
+  min-width: 300px;
+}
+
+.home-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.home-content h1 span {
+  color: #00d4ff;
+}
+
+.intro-text {
+  margin: 15px 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #bcb8b8;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: #00d4ff;
+  color: #000;
+}
+
+.btn.primary:hover {
+  background: #00bde6;
+  transform: scale(1.05);
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid #00d4ff;
+  color: #00d4ff;
+}
+
+.btn.secondary:hover {
+  background: #00d4ff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .home-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-image {
+    display: none;
+  }
+
+  .home-content h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .robot-icon {
+    order: -1;
+    margin-bottom: 10px;
+    width: 100px;
+    height: auto;
+  }
+
+  .home-buttons {
+    justify-content: center;
+  }
+}
+
+/* End Home Section */
+
+/* Start Experience Section */
+
+.experience-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.exp-card,
+.project-card-exp {
+  background: #0d1b2a;
+  border: 1px solid #00d4ff;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+.timeline-item {
+  background: rgba(0, 212, 255, 0.05);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
+  transition: background 0.3s ease;
+}
+
+.timeline-item:hover {
+  background: rgba(0, 212, 255, 0.15);
+}
+
+.year {
+  font-weight: bold;
+  color: #00d4ff;
+  margin-bottom: 5px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+.details-list {
+  display: none;
+  margin-top: 5px;
+  padding-left: 20px;
+  line-height: 1.5;
+  color: #ccc;
+  list-style: disc;
+}
+
+.project-card-exp {
+  background: #0d1b2a;
+  border: 1px solid #00d4ff;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px auto;
+}
+
+.project-item {
+  display: flex;
+  align-items: flex-start; /* top-aligned items */
+  gap: 10px;
+  background: rgba(0, 212, 255, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.project-item:hover {
+  background: rgba(0, 212, 255, 0.15);
+  cursor: url("../img/robot-arm-cursor.png"), auto;
+}
+
+.project-item i {
+  font-size: 1.5em;
+  color: #00d4ff;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5px;
+}
+
+.project-title {
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.project-desc {
+  display: none;
+  margin-top: 5px;
+  padding-left: 20px;
+  text-align: left;
+  line-height: 1.5;
+  color: #ccc;
+  list-style: disc;
+}
+
+@media (max-width: 768px) {
+  .project-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-item i {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project-details {
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+
+/* End Experience Section */
+
+/* Start Skills Section */
+
+.skills {
+  background: #1b263b;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+.skills h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.skills-slider {
+  position: relative;
+}
+
+.skills-track {
+  display: flex;
+  gap: 20px;
+  animation: scrollSkills 10s linear infinite;
+  will-change: transform;
+}
+
+.skill-card {
+  background: #0d1b2a;
+  border: 1px solid #00d4ff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  min-width: 160px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.skill-card span {
+  display: block;
+  font-weight: 500;
+  color: #fff;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+}
+
+@keyframes scrollSkills {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Allow swipe on mobile */
+@media (max-width: 768px) {
+  .skills-slider {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .skills-track {
+    animation: scrollSkills 10s linear infinite;
+  }
+}
+
+/* End Skills Section */
+
+/* Star Tab Section */
+
+.project-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.project-tabs .tab-btn {
+  background: transparent;
+  border: 2px solid #00d4ff;
+  color: #00d4ff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
+  transition: all 0.3s ease;
+}
+
+.project-tabs .tab-btn:hover {
+  background: #00d4ff;
+  color: #000;
+}
+
+.project-tabs .tab-btn.active {
+  background: #00d4ff;
+  color: #000;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* End Tab Section */
+
+/* Start Sample Projects Section */
+
+.projects {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 40px;
+  --gap: 16px;
+}
+
+.projects h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+  touch-action: pan-y;
+}
+
+.projects-track {
+  display: flex;
+  gap: var(--gap);
+  cursor: grab;
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+
+.projects-track:active {
+  cursor: grabbing;
+}
+
+.projects-track.centered {
+  justify-content: center;
+}
+
+.project-card {
+  position: relative;
+  flex: 0 0 calc((100% - (2 * var(--gap))) / 3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #1b263b;
+  border: 1px solid #00d4ff;
+  border-radius: 15px;
+  padding: 28px 22px 28px 22px;
+  min-height: 360px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: grab;
+}
+
+.project-card .card-overlay {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  width: 100%;
+  padding: 0 22px;
+}
+
+.project-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  margin: 0 0 8px 0;
+  color: #00d4ff;
+}
+.project-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin: 0;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.12);
+}
+
+.project-card .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.3s ease;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
+}
+
+.project-card .btn.primary {
+  background: #00d4ff;
+  color: #000;
+}
+
+.project-card .btn.secondary {
+  background: transparent;
+  border: 2px solid #00d4ff;
+  color: #00d4ff;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #666;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
+  transition: background 0.25s, transform 0.15s;
+}
+
+.carousel-dots .dot.active {
+  background: #00d4ff;
+  transform: scale(1.15);
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    flex: 0 0 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 28px 22px 20px 22px; /* normal bottom padding */
+    position: relative; /* keep relative in case needed */
+    min-height: auto; /* allow card to expand based on content */
+  }
+
+  .project-card .card-overlay {
+    position: static; /* remove absolute positioning */
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    margin-top: 12px; /* spacing from description */
+    width: 100%;
+    padding: 0;
+  }
+
+  .project-card .card-overlay .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* End Sample Projects Section */
+
+/* Start WIP */
+
+.project-card[data-status="wip"]::before {
+  content: "WORK IN PROGRESS";
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.65);
+  color: var(--primary-color, #00bcd4);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+  padding: 15px;
+  letter-spacing: 1px;
+  border-radius: 15px;
+  backdrop-filter: blur(2px);
+}
+
+/* Subtle card desaturation */
+.project-card[data-status="wip"] img {
+  filter: grayscale(40%) brightness(0.9);
+}
+
+/* End WIP */
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #0d1b2a;
+}
+
+.project-card.animate-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Start Footer Section */
+
+footer {
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  padding: 30px 20px;
+  text-align: center;
+  color: #ffffff;
+  /* position: relative; */
+  z-index: 9999;
+}
+
+footer h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #00d4ff;
+}
+
+footer .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+footer .social-links a {
+  color: #00d4ff;
+  font-size: 1.8rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .social-links a:hover {
+  transform: scale(1.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
+}
+
+footer p {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 100px;
+  background-color: #00d4ff;
+  color: #000;
+  text-align: center;
+  padding: 5px 6px;
+  border-radius: 4px;
+
+  /* Position */
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  font-size: 12px;
+  z-index: 10;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #00d4ff transparent transparent transparent;
+}
+
+/* Show tooltip on hover */
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* End Footer Section */
+
+/* Start Scroll to Top Button */
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  z-index: 100;
+  background: none;
+  border: none;
+  cursor: url("../img/robot-arm-cursor.png"), auto;
+  padding: 0;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#scrollTopBtn.show {
+  transform: scale(1);
+  opacity: 1;
+  animation: pulseArrow 1.2s infinite alternate;
+}
+
+#scrollTopBtn:hover {
+  transform: scale(1.2);
+}
+
+/* Arrow pulse */
+@keyframes pulseArrow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* End Scroll to Top Button */

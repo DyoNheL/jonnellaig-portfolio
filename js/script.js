@@ -34,6 +34,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Lazy loading
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("img").forEach((img) => {
+    if (!img.hasAttribute("loading")) {
+      img.setAttribute("loading", "lazy");
+    }
+  });
+});
+
 // Scroll to Top Button
 
 // Elements
@@ -41,8 +50,12 @@ const scrollBtn = document.getElementById("scrollTopBtn");
 const footer = document.querySelector("footer");
 
 // Scroll button eyes
-const scrollLeftEye = document.getElementById("scrollLeftEye") || document.querySelector("#scrollTopBtn #leftEye");
-const scrollRightEye = document.getElementById("scrollRightEye") || document.querySelector("#scrollTopBtn #rightEye");
+const scrollLeftEye =
+  document.getElementById("scrollLeftEye") ||
+  document.querySelector("#scrollTopBtn #leftEye");
+const scrollRightEye =
+  document.getElementById("scrollRightEye") ||
+  document.querySelector("#scrollTopBtn #rightEye");
 
 // Main robot elements
 const leftEye = document.getElementById("leftEye");

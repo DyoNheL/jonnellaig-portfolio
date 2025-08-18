@@ -81,24 +81,30 @@
 
         <div class="home-content">
             <h1>
-                Hi, I'm <span class="highlight-name">Jonnel</span>
-                <span class="robot-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 64 64" fill="none">
-                        <!-- Body -->
-                        <rect x="10" y="20" width="44" height="30" rx="5" fill="#00d4ff" stroke="#333"
-                            stroke-width="2" />
-                        <!-- Eyes -->
-                        <circle id="leftEye" cx="22" cy="35" r="4" fill="white" />
-                        <circle id="rightEye" cx="42" cy="35" r="4" fill="white" />
-                        <!-- Mouth -->
-                        <rect x="27" y="45" width="10" height="3" rx="1" fill="white" />
-                        <!-- Antenna -->
-                        <line x1="32" y1="10" x2="32" y2="20" stroke="#333" stroke-width="2" />
-                        <circle id="antennaLight" cx="32" cy="8" r="3" fill="#ff5252" />
-                        <!-- Right arm -->
-                        <line id="rightArm" x1="54" y1="30" x2="44" y2="30" stroke="#333" stroke-width="3"
-                            stroke-linecap="round" />
-                    </svg>
+                <span class="robot-container">
+                    <span class="robot-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 64 64" fill="none">
+                            <!-- Body -->
+                            <rect x="10" y="20" width="44" height="30" rx="5" fill="#00d4ff" stroke="#333"
+                                stroke-width="2" />
+                            <!-- Eyes -->
+                            <circle id="leftEye" cx="22" cy="35" r="4" fill="white" />
+                            <circle id="rightEye" cx="42" cy="35" r="4" fill="white" />
+                            <!-- Mouth -->
+                            <rect x="27" y="45" width="10" height="3" rx="1" fill="white" />
+                            <!-- Antenna -->
+                            <line x1="32" y1="10" x2="32" y2="20" stroke="#333" stroke-width="2" />
+                            <circle id="antennaLight" cx="32" cy="8" r="3" fill="#ff5252" />
+                            <!-- Right arm -->
+                            <line id="rightArm" x1="54" y1="30" x2="44" y2="30" stroke="#333" stroke-width="3"
+                                stroke-linecap="round" />
+                        </svg>
+                    </span>
+
+                    <!-- Speech bubble with typing effect -->
+                    <div class="speech-bubble">
+                        <span class="typing-text">Hi, I'm Jonnel</span>
+                    </div>
                 </span>
             </h1>
 
@@ -113,7 +119,8 @@
             </p>
             <div class="home-buttons">
                 <a href="#footer" class="btn primary"><i class="fas fa-briefcase"></i> Hire Me</a>
-                <a href="files/jonnellaig_cv.pdf" download class="btn secondary"><i class="fas fa-download"></i> Get
+                <a href="files/jonnellaig_cv.pdf" download class="btn secondary"><i class="fas fa-download"></i>
+                    Download
                     CV</a>
             </div>
         </div>

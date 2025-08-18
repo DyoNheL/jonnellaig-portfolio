@@ -48,7 +48,7 @@ html {
 /* Start Navbar */
 
 header {
-  background: #1b263b;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -99,8 +99,22 @@ header {
   border-bottom: 2px solid #00d4ff;
 }
 
-/* Mobile menu */
 @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
   .nav-links li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 15px 0;
@@ -121,6 +135,10 @@ header {
     animation: fadeIn 0.3s ease-in-out;
   }
 
+  .menu-toggle {
+    display: block;
+  }
+
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -136,16 +154,8 @@ header {
 /* Start Sections */
 
 section {
-  padding: 80px 40px;
+  padding: 40px 40px;
   text-align: center;
-}
-
-.intro {
-  background: linear-gradient(120deg, #1b263b, #0d1b2a);
-}
-
-.intro h1 span {
-  color: #00d4ff;
 }
 
 .btn-group {
@@ -154,10 +164,13 @@ section {
 
 .btn {
   padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
 }
 
 .btn.primary {
@@ -166,7 +179,8 @@ section {
 }
 
 .btn.primary:hover {
-  transform: translateY(-8px);
+  background: #00bde6;
+  transform: scale(1.05);
   box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
   cursor: url("../img/robot-arm-cursor.png"), auto;
 }
@@ -183,111 +197,28 @@ section {
   cursor: url("../img/robot-arm-cursor.png"), auto;
 }
 
-.summary,
-.skills,
-.projects {
-  background: #1b263b;
-}
-
-.timeline {
-  border-left: 3px solid #00d4ff;
-  margin: 20px auto;
-  padding-left: 20px;
-  max-width: 500px;
-  text-align: left;
-}
-
-.timeline-item {
-  margin-bottom: 20px;
-}
-
-.year {
-  font-weight: bold;
-  color: #00d4ff;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 15px;
-}
-
-.skill-card {
-  background: #0d1b2a;
-  padding: 15px;
-  border: 1px solid #00d4ff;
-  border-radius: 5px;
-}
-
-.project-card {
-  background: #0d1b2a;
-  padding: 20px;
-  border: 1px solid #00d4ff;
-  max-width: 500px;
-  margin: auto;
-}
-
-footer {
-  background: #0d1b2a;
-  padding: 40px 20px;
-}
-
-.socials {
-  margin-bottom: 15px;
-}
-
-.socials a {
-  margin: 0 10px;
-  color: #00d4ff;
-  text-decoration: none;
-}
-
-.socials a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #1b263b;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    padding: 20px;
-  }
-  .nav-links.show {
-    display: flex;
-  }
-  .menu-toggle {
-    display: block;
-  }
-}
-
 /* End Sections */
 
-/* Start Home Section */
-
-.highlight-name {
-  color: #00d4ff;
-}
+/* Start Homepage */
 
 .robot-icon {
   display: inline-block;
   vertical-align: middle;
   transform-origin: bottom center;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
+}
+
+.robot-icon:hover {
+  transform: scale(1.05) rotate(-2deg);
 }
 
 .home-section {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 40px;
   padding: 60px 10%;
-  flex-wrap: wrap;
 }
 
 .home-image {
@@ -298,76 +229,186 @@ footer {
 
 .home-image img {
   max-width: 500px;
+  width: 100%;
   height: auto;
+  border-radius: 12px;
 }
 
 .home-content {
   flex: 2;
-  min-width: 300px;
+  min-width: 280px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .home-content h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-.home-content h1 span {
-  color: #00d4ff;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
 .intro-text {
   margin: 15px 0;
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   line-height: 1.6;
   color: #bcb8b8;
 }
 
 .home-buttons {
   display: flex;
-  justify-content: center;
   gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.robot-container {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  font-family: "Poppins", Arial, sans-serif;
   margin-top: 20px;
 }
 
-.btn {
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease;
+.speech-bubble {
+  position: absolute;
+  top: -65px;
+  left: -110%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #00d4ff, #00a3ff);
+  border-radius: 16px;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+
+  animation: popBounce 0.8s ease-out forwards,
+    talkingBounce 2s ease-in-out 0.8s infinite;
 }
 
-.btn.primary {
-  background: #00d4ff;
-  color: #000;
+.speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(135deg, #00d4ff, #00a3ff);
+  border-radius: 3px;
+  z-index: -1;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+  animation: tailBounce 2s ease-in-out 0.8s infinite;
 }
 
-.btn.primary:hover {
-  background: #00bde6;
-  transform: scale(1.05);
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #ffffff;
+  animation: typing 7s steps(15) infinite;
 }
 
-.btn.secondary {
-  background: transparent;
-  border: 2px solid #00d4ff;
-  color: #00d4ff;
+.typing-text::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: #ffffff;
+  animation: blinkCursor 7s steps(1) infinite;
 }
 
-.btn.secondary:hover {
-  background: #00d4ff;
-  color: #000;
-  transform: scale(1.05);
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  90% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blinkCursor {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes popBounce {
+  0% {
+    transform: scale(0) translateY(20px);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1) translateY(-5px);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes talkingBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-3px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes tailBounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(0) rotate(45deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(45deg);
+  }
 }
 
 @media (max-width: 768px) {
   .home-section {
-    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 60px 5%;
   }
 
   .home-image {
@@ -375,24 +416,32 @@ footer {
   }
 
   .home-content h1 {
-    display: flex;
+    gap: 10px;
+    font-size: 2rem;
     flex-direction: column;
     align-items: center;
-  }
-
-  .robot-icon {
-    order: -1;
-    margin-bottom: 10px;
-    width: 100px;
-    height: auto;
   }
 
   .home-buttons {
     justify-content: center;
   }
+
+  .robot-icon {
+    order: -1;
+    margin-top: 20px;
+    width: 120px;
+    height: auto;
+  }
+
+  .speech-bubble {
+    top: -40px;
+    left: -10%;
+    font-size: 14px;
+    padding: 8px 14px;
+  }
 }
 
-/* End Home Section */
+/* End Homepage */
 
 /* Start Experience Section */
 
@@ -413,29 +462,92 @@ footer {
   max-width: 500px;
 }
 
+.timeline {
+  position: relative;
+  margin: 20px auto;
+  padding-left: 30px;
+  max-width: 500px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 2px;
+  height: 100%;
+  background: #00d4ff;
+}
+
+.timeline-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+  align-items: flex-start;
+}
+
+.timeline-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.timeline-info i {
+  color: #00d4ff;
+  font-size: 1.2rem;
+  width: 20px;
+  text-align: center;
+}
+
+.year,
+.position,
+.company {
+  font-weight: 600;
+  color: #fff;
+}
+
 .timeline-item {
   background: rgba(0, 212, 255, 0.05);
-  padding: 15px;
-  margin: 10px 0;
+  padding: 15px 20px;
+  margin: 20px 0;
   border-radius: 8px;
   cursor: url("../img/robot-arm-cursor.png"), auto;
   transition: background 0.3s ease;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  background: #00d4ff;
+  border: 2px solid #0d1b2a;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0, 212, 255, 0.7);
 }
 
 .timeline-item:hover {
   background: rgba(0, 212, 255, 0.15);
 }
 
-.year {
-  font-weight: bold;
-  color: #00d4ff;
-  margin-bottom: 5px;
-}
-
 .details {
   display: flex;
   flex-direction: column;
-  margin-left: 5px;
+  margin-left: 0;
+  width: 100%;
+  text-align: left;
 }
 
 .details-list {
@@ -445,6 +557,7 @@ footer {
   line-height: 1.5;
   color: #ccc;
   list-style: disc;
+  text-align: left;
 }
 
 .project-card-exp {
@@ -465,7 +578,7 @@ footer {
 
 .project-item {
   display: flex;
-  align-items: flex-start; /* top-aligned items */
+  align-items: flex-start;
   gap: 10px;
   background: rgba(0, 212, 255, 0.05);
   padding: 10px;
@@ -532,6 +645,27 @@ footer {
     margin-left: 0;
     justify-content: center;
   }
+
+  .timeline-header {
+    width: 100%;
+  }
+
+  .timeline-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .timeline-info i {
+    flex: 0 0 25px;
+    text-align: left;
+  }
+
+  .timeline-info span {
+    flex: 1;
+    text-align: left;
+  }
 }
 
 /* End Experience Section */
@@ -539,8 +673,6 @@ footer {
 /* Start Skills Section */
 
 .skills {
-  background: #1b263b;
-  padding: 80px 20px;
   overflow: hidden;
 }
 
@@ -586,7 +718,7 @@ footer {
 }
 
 .skill-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.15);
   box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
 }
 
@@ -599,14 +731,13 @@ footer {
   }
 }
 
-/* Allow swipe on mobile */
 @media (max-width: 768px) {
   .skills-slider {
-    overflow-x: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
   }
   .skills-track {
-    animation: scrollSkills 10s linear infinite;
+    animation: scrollSkills 13s linear infinite;
   }
 }
 
@@ -642,6 +773,7 @@ footer {
 .project-tabs .tab-btn.active {
   background: #00d4ff;
   color: #000;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
 }
 
 .tab-content {
@@ -699,12 +831,14 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: #1b263b;
+  background: #0d1b2a;
   border: 1px solid #00d4ff;
   border-radius: 15px;
-  padding: 28px 22px 28px 22px;
+  padding: 20px;
   min-height: 360px;
   text-align: center;
+  max-width: 500px;
+  margin: auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   box-sizing: border-box;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -732,7 +866,7 @@ footer {
 
 .project-card h3 {
   font-size: 1.2rem;
-  margin: 0 0 8px 0;
+  margin: 10px 0 8px 0;
   color: #00d4ff;
 }
 .project-card p {
@@ -760,17 +894,6 @@ footer {
   cursor: url("../img/robot-arm-cursor.png"), auto;
 }
 
-.project-card .btn.primary {
-  background: #00d4ff;
-  color: #000;
-}
-
-.project-card .btn.secondary {
-  background: transparent;
-  border: 2px solid #00d4ff;
-  color: #00d4ff;
-}
-
 .carousel-dots {
   display: flex;
   justify-content: center;
@@ -795,20 +918,19 @@ footer {
 
 @media (max-width: 768px) {
   .project-card {
-    flex: 0 0 90%;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 28px 22px 20px 22px; /* normal bottom padding */
-    position: relative; /* keep relative in case needed */
-    min-height: auto; /* allow card to expand based on content */
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 28px 22px 20px 22px;
+    min-height: auto;
   }
 
   .project-card .card-overlay {
-    position: static; /* remove absolute positioning */
+    position: static;
+    display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: stretch;
-    margin-top: 12px; /* spacing from description */
+    margin-top: 12px;
     width: 100%;
     padding: 0;
   }
@@ -843,27 +965,11 @@ footer {
   backdrop-filter: blur(2px);
 }
 
-/* Subtle card desaturation */
 .project-card[data-status="wip"] img {
   filter: grayscale(40%) brightness(0.9);
 }
 
 /* End WIP */
-
-#particles-js {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: #0d1b2a;
-}
-
-.project-card.animate-show {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* Start Footer Section */
 
@@ -872,7 +978,6 @@ footer {
   padding: 30px 20px;
   text-align: center;
   color: #ffffff;
-  /* position: relative; */
   z-index: 9999;
 }
 
@@ -912,13 +1017,11 @@ footer p {
   gap: 10px;
 }
 
-/* Tooltip container */
 .tooltip {
   position: relative;
   display: inline-block;
 }
 
-/* Tooltip text */
 .tooltip .tooltip-text {
   visibility: hidden;
   width: 100px;
@@ -927,8 +1030,6 @@ footer p {
   text-align: center;
   padding: 5px 6px;
   border-radius: 4px;
-
-  /* Position */
   position: absolute;
   bottom: 125%;
   left: 50%;
@@ -940,7 +1041,6 @@ footer p {
   z-index: 10;
 }
 
-/* Tooltip arrow */
 .tooltip .tooltip-text::after {
   content: "";
   position: absolute;
@@ -952,7 +1052,6 @@ footer p {
   border-color: #00d4ff transparent transparent transparent;
 }
 
-/* Show tooltip on hover */
 .tooltip:hover .tooltip-text {
   visibility: visible;
   opacity: 1;
@@ -986,7 +1085,6 @@ footer p {
   transform: scale(1.2);
 }
 
-/* Arrow pulse */
 @keyframes pulseArrow {
   0% {
     transform: scale(1);
@@ -1000,3 +1098,22 @@ footer p {
 }
 
 /* End Scroll to Top Button */
+
+/* Start Background Animation */
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #0d1b2a;
+}
+
+.project-card.animate-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* End Background Animation */

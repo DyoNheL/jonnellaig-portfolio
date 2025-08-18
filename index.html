@@ -127,18 +127,30 @@
     </section>
 
     <!-- ===== EXPERIENCE TIMELINE ===== -->
-    <section id="experience" class="experience" data-aos="fade-up">
+    <section id="experience" class="experience" data-aos="fade-up" data-aos-delay="100">
         <div class="experience-container">
             <!-- LEFT: Years of Experience -->
             <div class="exp-card">
                 <h2>Years of Experience</h2>
                 <div class="timeline">
 
-                    <!-- Timeline item -->
-                    <div class="timeline-item" onclick="toggleTimeline(this)">
-                        <div class="year">2022 - Present</div>
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100" onclick="toggleTimeline(this)">
+                        <div class="timeline-header">
+                            <div class="timeline-info">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span class="year">2022 - Present</span>
+                            </div>
+                            <div class="timeline-info">
+                                <i class="fas fa-user-tie"></i>
+                                <span class="position">Application Systems Engineer</span>
+                            </div>
+                            <div class="timeline-info">
+                                <i class="fas fa-building"></i>
+                                <span class="company">WeServ Systems International, Inc.</span>
+                            </div>
+                        </div>
+
                         <div class="details">
-                            Application Systems Engineer - WeServ Systems International, Inc.
                             <ul class="details-list">
                                 <li>Automated test cases using Selenium and Robot Framework.</li>
                                 <li>Created detailed test documentation and reports.</li>
@@ -153,10 +165,22 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item" onclick="toggleTimeline(this)">
-                        <div class="year">2021 - 2022</div>
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100" onclick="toggleTimeline(this)">
+                        <div class="timeline-header">
+                            <div class="timeline-info">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span class="year">2021 - 2022</span>
+                            </div>
+                            <div class="timeline-info">
+                                <i class="fas fa-user-tie"></i>
+                                <span class="position">Application Systems Engineer/Trainee</span>
+                            </div>
+                            <div class="timeline-info">
+                                <i class="fas fa-building"></i>
+                                <span class="company">WeServ Systems International, Inc.</span>
+                            </div>
+                        </div>
                         <div class="details">
-                            Application Systems Engineer/Trainee - WeServ Systems International, Inc.
                             <ul class="details-list">
                                 <li>Created program specification documents.</li>
                                 <li>Created program test preparation documents.</li>
@@ -168,7 +192,6 @@
                             </ul>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -179,7 +202,7 @@
                 <div class="project-list">
 
                     <!-- Project Item -->
-                    <div class="project-item" onclick="toggleProject(this)">
+                    <div class="project-item" data-aos="fade-up" data-aos-delay="100" onclick="toggleProject(this)">
                         <i class="fa-solid fa-laptop-code"></i>
                         <div class="project-details">
                             <span class="project-title">Web and Mobile Automation Testing</span>
@@ -193,7 +216,7 @@
                         </div>
                     </div>
 
-                    <div class="project-item" onclick="toggleProject(this)">
+                    <div class="project-item" data-aos="fade-up" data-aos-delay="100" onclick="toggleProject(this)">
                         <i class="fa-solid fa-users"></i>
                         <div class="project-details">
                             <span class="project-title">Login Authentication Testing</span>
@@ -205,7 +228,7 @@
                         </div>
                     </div>
 
-                    <div class="project-item" onclick="toggleProject(this)">
+                    <div class="project-item" data-aos="fade-up" data-aos-delay="100" onclick="toggleProject(this)">
                         <i class="fa-solid fa-gear"></i>
                         <div class="project-details">
                             <span class="project-title">CMS / Admin Portal Testing</span>
@@ -217,7 +240,7 @@
                         </div>
                     </div>
 
-                    <div class="project-item" onclick="toggleProject(this)">
+                    <div class="project-item" data-aos="fade-up" data-aos-delay="100" onclick="toggleProject(this)">
                         <i class="fa-solid fa-database"></i>
                         <div class="project-details">
                             <span class="project-title">Database Testing</span>
@@ -230,7 +253,7 @@
                         </div>
                     </div>
 
-                    <div class="project-item" onclick="toggleProject(this)">
+                    <div class="project-item" data-aos="fade-up" data-aos-delay="100" onclick="toggleProject(this)">
                         <i class="fa-solid fa-table"></i>
                         <div class="project-details">
                             <span class="project-title">Dynamic Table Automation</span>
@@ -242,7 +265,7 @@
                         </div>
                     </div>
 
-                    <div class="project-item" onclick="toggleProject(this)">
+                    <div class="project-item" data-aos="fade-up" data-aos-delay="100" onclick="toggleProject(this)">
                         <i class="fa-solid fa-file-excel"></i>
                         <div class="project-details">
                             <span class="project-title">Data-Driven Test Suites</span>
@@ -260,8 +283,8 @@
 
     <!-- ===== SKILLS ===== -->
     <section class="skills" id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-slider">
+        <h2 data-aos="fade-up">Technical Skills</h2>
+        <div class="skills-slider" data-aos="fade-left">
             <div class="skills-track">
                 <div class="skill-card">
                     <img src="https://cdn.simpleicons.org/selenium" alt="Selenium" width="128" height="128">
@@ -339,7 +362,7 @@
         <div class="carousel-viewport tab-content active" data-tab-content="automation" data-aos="fade-up">
             <div class="projects-track">
                 <div class="project-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24">
                         <path fill="#00d4ff"
                             d="M17 18a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2M1 2h3.27l.94 2H20a1 1 0 0 1 1 1c0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63l-.03.12a.25.25 0 0 0 .25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1zm6 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2m9-7l2.78-5H6.14l2.36 5z" />
                     </svg>
@@ -353,7 +376,7 @@
                 </div>
 
                 <div class="project-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24">
                         <path fill="#00d4ff" d="M11.5 1L2 6v2h19V6m-5 4v7h3v-7M2 22h19v-3H2m8-9v7h3v-7m-9 0v7h3v-7z" />
                     </svg>
                     <h3>Banking Portal Robot Framework Suite</h3>
@@ -366,7 +389,7 @@
                 </div>
 
                 <div class="project-card" data-status="wip">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24">
                         <path fill="#00d4ff"
                             d="M7 7H5a2 2 0 0 0-2 2v8h2v-4h2v4h2V9a2 2 0 0 0-2-2m0 4H5V9h2m7-2h-4v10h2v-4h2a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2m0 4h-2V9h2m6 0v6h1v2h-4v-2h1V9h-1V7h4v2Z" />
                     </svg>
@@ -386,7 +409,7 @@
         <div class="carousel-viewport tab-content" data-tab-content="documentation" data-aos="fade-up">
             <div class="projects-track">
                 <div class="project-card" data-status="wip">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24">
                         <path fill="#00d4ff"
                             d="M8 12h8v2H8zm2 8H6V4h7v5h5v3.1l2-2V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4zm-2-2h4.1l.9-.9V16H8zm12.2-5c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1l-2.1-2.1l1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z" />
                     </svg>
@@ -400,7 +423,7 @@
                 </div>
 
                 <div class="project-card" data-status="wip">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24">
                         <path fill="#00d4ff"
                             d="M19 7h-2.81c-.45-.8-1.07-1.5-1.82-2L16 3.41L14.59 2l-2.17 2.17a6 6 0 0 0-2.83 0L7.41 2L6 3.41L7.62 5c-.75.5-1.36 1.21-1.81 2H3v2h2.09c-.06.33-.09.66-.09 1v1H3v2h2v1c0 .34.03.67.09 1H3v2h2.81A6 6 0 0 0 13 19.65V19c0-.57.09-1.14.25-1.69c-.66.45-1.45.69-2.25.69c-2.21 0-4-1.79-4-4v-4c0-2.21 1.79-4 4-4s4 1.79 4 4v4c0 .19 0 .39-.05.58c.59-.54 1.29-.96 2.05-1.23V13h2v-2h-2v-1c0-.34-.03-.67-.09-1H19zm2.34 9l-3.59 3.59L16.16 18L15 19.16l2.75 3l4.75-4.75zM13 9v2H9V9zm0 4v2H9v-2z" />
                     </svg>
@@ -419,7 +442,7 @@
         <div class="carousel-viewport tab-content" data-tab-content="cicd" data-aos="fade-up">
             <div class="projects-track">
                 <div class="project-card" data-status="wip">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24">
                         <path fill="#00d4ff"
                             d="m22 18l-5 4l-8-3v3l-4.19-5.75l12.91 1.05V6.34L22 5.65zM4.81 16.25V8.96l12.91-2.62L10.6 2v2.84L3.97 6.76L2 9.38v5.69z" />
                     </svg>

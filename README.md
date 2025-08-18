@@ -18,16 +18,15 @@ Built with **HTML**, **CSS**, and **JavaScript**, featuring a modern design and 
 - **Deployment:** Cloudflare Pages
 
 ## Live Demo
-View <a href="https://jonnellaig.pages.dev/" target="_blank">Jonnel Laig | QA Automation Tester</a> Portfolio Website
+View [Jonnel Laig | QA Automation Tester](https://jonnellaig.pages.dev/) Portfolio Website
 
 ## Contact
 If you'd like to collaborate, discuss opportunities, or just say hello, feel free to reach out:
 
-- **LinkedIn:** <a href="https://www.linkedin.com/in/jonnellaig/" target="_blank">linkedin.com/in/jonnellaig</a> 
-- **GitHub:** <a href="https://github.com/DyoNheL" target="_blank">github.com/DyoNheL</a> 
+- **LinkedIn:** [linkedin.com/in/jonnellaig](https://www.linkedin.com/in/jonnellaig/)
+- **GitHub:** [github.com/DyoNheL](https://github.com/DyoNheL)
 
 ---
 
 ## License
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
-
+This project is licensed under the Proprietary License (All Rights Reserved) – see the [LICENSE](LICENSE) file for details.

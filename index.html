@@ -39,7 +39,6 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <script src="js/script.js" defer></script>
-    <script src="js/projects.js" defer></script>
     <script src="js/navbar.js" defer></script>
     <script src="js/experience.js" defer></script>
     <script src="js/projectExperienceCard.js" defer></script>
@@ -119,9 +118,10 @@
             </p>
             <div class="home-buttons">
                 <a href="#footer" class="btn primary"><i class="fas fa-briefcase"></i> Hire Me</a>
-                <a href="files/jonnellaig_cv.pdf" download class="btn secondary"><i class="fas fa-download"></i>
-                    Download
-                    CV</a>
+                <a href="#" class="btn secondary disabled">
+                    <i class="fas fa-download"></i>
+                    Download CV
+                </a>
             </div>
         </div>
     </section>
@@ -361,7 +361,7 @@
         <!-- Automation Projects -->
         <div class="carousel-viewport tab-content active" data-tab-content="automation" data-aos="fade-up">
             <div class="projects-track">
-                <div class="project-card">
+                <div class="project-card" data-status="wip">
                     <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24">
                         <path fill="#00d4ff"
                             d="M17 18a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2M1 2h3.27l.94 2H20a1 1 0 0 1 1 1c0 .17-.05.34-.12.5l-3.58 6.47c-.34.61-1 1.03-1.75 1.03H8.1l-.9 1.63l-.03.12a.25.25 0 0 0 .25.25H19v2H7a2 2 0 0 1-2-2c0-.35.09-.68.24-.96l1.36-2.45L3 4H1zm6 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2c0-1.11.89-2 2-2m9-7l2.78-5H6.14l2.36 5z" />
@@ -379,12 +379,15 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24">
                         <path fill="#00d4ff" d="M11.5 1L2 6v2h19V6m-5 4v7h3v-7M2 22h19v-3H2m8-9v7h3v-7m-9 0v7h3v-7z" />
                     </svg>
-                    <h3>Banking Portal Robot Framework Suite</h3>
-                    <p>End-to-end automation of login, funds transfer, and transaction verification using Robot
-                        Framework with data-driven testing.</p>
+                    <h3>DemoAutomation Banking App</h3>
+                    <p>Automation test suite for DemoAutomation Bank application covering Customer and Manager flows.
+                        Includes end-to-end scenarios for login, account management, transactions, and manager
+                        operations. Built with Robot Framework to support regression and functional testing.</p>
                     <div class="card-overlay">
-                        <a href="#" class="btn primary"><i class="fab fa-github"></i> View Repo</a>
-                        <a href="#" class="btn secondary"><i class="fas fa-external-link-alt"></i> View Demo</a>
+                        <a href="https://github.com/DyoNheL/robotframework-demoautomation-bank-tests"
+                            class="btn primary" target="_blank"><i class="fab fa-github"></i> View Repo</a>
+                        <a href="https://www.linkedin.com/posts/jonnellaig_automationtesting-robotframework-selenium-activity-7364244853536276483-KktB?utm_source=share&utm_medium=member_desktop&rcm=ACoAADKZWAkBl1RLz2jbqcN30QMMnQ-SGD-ZUXk"
+                            class="btn secondary" target="_blank"><i class="fas fa-external-link-alt"></i> View Demo</a>
                     </div>
                 </div>
 

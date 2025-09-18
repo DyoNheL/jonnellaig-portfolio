@@ -690,7 +690,7 @@ section {
 .skills-track {
   display: flex;
   gap: 20px;
-  animation: scrollSkills 10s linear infinite;
+  animation: scrollSkills 5s linear infinite;
   will-change: transform;
 }
 
